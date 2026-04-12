@@ -21,6 +21,7 @@ eng.pub
 bun.lock
 bun.lockb
 node_modules/
+public/images/
 
 # Editor directories and files
 .vscode/*
