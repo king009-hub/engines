@@ -46,6 +46,19 @@ const Cart = () => {
     navigate('/checkout');
   }, [items, getProduct, navigate]);
 
+  // Pre-fetch checkout page components when user is in cart
+  useEffect(() => {
+    if (items.length > 0) {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = '/checkout';
+      document.head.appendChild(link);
+      return () => {
+        document.head.removeChild(link);
+      };
+    }
+  }, [items.length]);
+
   if (items.length === 0) {
     return (
       <Layout title={t('cart.title')}>
