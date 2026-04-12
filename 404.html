@@ -30,7 +30,11 @@
     <!-- Preload Critical Images -->
     <link rel="preload" as="image" href="./header.jpg">
     <link rel="preload" as="image" href="./logo.png">
-  <script type="module" crossorigin src="./assets/index-BnYx03Lc.js"></script>
+
+    <!-- Pre-load Stripe for faster checkout -->
+    <link rel="preconnect" href="https://js.stripe.com">
+    <script src="https://js.stripe.com/v3/" async></script>
+  <script type="module" crossorigin src="./assets/index-CHTw6Ji-.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/query-vendor-B5jppBZd.js">
   <link rel="modulepreload" crossorigin href="./assets/forms-vendor-qlunRAMb.js">
   <link rel="modulepreload" crossorigin href="./assets/react-vendor-DSO9o8SP.js">
