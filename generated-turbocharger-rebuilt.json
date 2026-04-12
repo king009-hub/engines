@@ -1,0 +1,1497 @@
+[
+  {
+    "name": "Ford Rebuilt Turbocharger (CHRA) 20190131",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Ford vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "20190131",
+    "price": 315,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/20190131 132838.jpg",
+      "/images/turbocharger-rebuilt/20190131 132926.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Ford Rebuilt Turbocharger (CHRA) 1111111141",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Ford vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "1111111141",
+    "price": 414,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/CHRA cartridges - Abm-automotive-online.com/1111111141.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Audi Rebuilt Turbocharger (CHRA) IMG 0703",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Audi vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "IMG 0703",
+    "price": 407,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMG 0703 ConvertImage.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) IMGP2007",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP2007",
+    "price": 401,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP2007.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) IMGP2378PP201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP2378PP201",
+    "price": 437,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP2378pp201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) IMGP2379PP201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP2379PP201",
+    "price": 182,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP2379pp201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "BMW Rebuilt Turbocharger (CHRA) IMGP2561K034201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for BMW vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP2561K034201",
+    "price": 197,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP2561K034201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) IMGP3003201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3003201",
+    "price": 230,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP3003201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) IMGP3005201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3005201",
+    "price": 243,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP3005201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "BMW Rebuilt Turbocharger (CHRA) IMGP3007201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for BMW vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3007201",
+    "price": 441,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP3007201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Audi Rebuilt Turbocharger (CHRA) IMGP3008201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Audi vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3008201",
+    "price": 518,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP3008201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Renault Rebuilt Turbocharger (CHRA) IMGP3009201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Renault vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3009201",
+    "price": 516,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP3009201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) IMGP3112201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3112201",
+    "price": 362,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP3112201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) IMGP3113201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3113201",
+    "price": 426,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP3113201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) IMGP3116201",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3116201",
+    "price": 198,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/IMGP3116201.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Audi Rebuilt Turbocharger (CHRA) IMGP3489",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Audi vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3489",
+    "price": 228,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3489.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "BMW Rebuilt Turbocharger (CHRA) IMGP3491",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for BMW vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3491",
+    "price": 235,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3491.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Renault Rebuilt Turbocharger (CHRA) IMGP3493",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Renault vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3493",
+    "price": 281,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3493.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) IMGP3495",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3495",
+    "price": 438,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3495.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "BMW Rebuilt Turbocharger (CHRA) IMGP3499",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for BMW vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3499",
+    "price": 457,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3499.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Renault Rebuilt Turbocharger (CHRA) IMGP3501",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Renault vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3501",
+    "price": 238,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3501.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) IMGP3503",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3503",
+    "price": 353,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3503.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) IMGP3505",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3505",
+    "price": 216,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3505.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "BMW Rebuilt Turbocharger (CHRA) IMGP3507",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for BMW vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3507",
+    "price": 231,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3507.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Renault Rebuilt Turbocharger (CHRA) IMGP3509",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Renault vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3509",
+    "price": 410,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3509.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) IMGP3552",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3552",
+    "price": 363,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3552.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) IMGP3689",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3689",
+    "price": 465,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/imgp3689.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-1056",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1056",
+    "price": 325,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1056G 110512160412.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Ford Rebuilt Turbocharger (CHRA) CHRA-1069",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Ford vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1069",
+    "price": 358,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1069G 110523162124.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-1070",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1070",
+    "price": 350,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1070G 110523162620.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) CHRA-1071",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1071",
+    "price": 440,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1071G 110523163034.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-1166",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1166",
+    "price": 326,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1166G 110615144437.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) CHRA-1167",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1167",
+    "price": 210,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1167 supp 1 110615145904.jpg",
+      "/images/turbocharger-rebuilt/p 1167G 110615145842.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Ford Rebuilt Turbocharger (CHRA) CHRA-1168",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Ford vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1168",
+    "price": 469,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1168G 110615150323.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) CHRA-1169",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1169",
+    "price": 362,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1169G 110615150924.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) CHRA-1184",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1184",
+    "price": 463,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1184G 110617165751.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Audi Rebuilt Turbocharger (CHRA) CHRA-1197",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Audi vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1197",
+    "price": 518,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1197G 110623181911.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Renault Rebuilt Turbocharger (CHRA) CHRA-1198",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Renault vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1198",
+    "price": 340,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1198G 110623182411.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Audi Rebuilt Turbocharger (CHRA) CHRA-123",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Audi vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-123",
+    "price": 184,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 123G 100901164717.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "BMW Rebuilt Turbocharger (CHRA) CHRA-124",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for BMW vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-124",
+    "price": 292,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 124G 110110142309.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) CHRA-1257",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1257",
+    "price": 521,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1257G 110718145653.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) CHRA-1258",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1258",
+    "price": 219,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1258G 110718150350.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) CHRA-125",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-125",
+    "price": 212,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 125G 110310113743.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) CHRA-126",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-126",
+    "price": 333,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 126G 100823173902.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) CHRA-128",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-128",
+    "price": 436,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 128G 100823174213.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-129",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-129",
+    "price": 486,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 129G 110310112852.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Ford Rebuilt Turbocharger (CHRA) CHRA-130",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Ford vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-130",
+    "price": 437,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 130G 110310114020.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-132",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-132",
+    "price": 333,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 132G 100823175823.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Renault Rebuilt Turbocharger (CHRA) CHRA-133",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Renault vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-133",
+    "price": 518,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 133G 100823180151.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "BMW Rebuilt Turbocharger (CHRA) CHRA-135",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for BMW vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-135",
+    "price": 255,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 135G 110512161150.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) CHRA-137",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-137",
+    "price": 326,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 137G 100825111614.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-1625",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1625",
+    "price": 480,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1625G 110902121611.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) CHRA-1705",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1705",
+    "price": 371,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1705G 110926134612.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) CHRA-1830",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1830",
+    "price": 345,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1830 supp 1 111114161327.jpg",
+      "/images/turbocharger-rebuilt/p 1830G 111114161313.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "BMW Rebuilt Turbocharger (CHRA) CHRA-1831",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for BMW vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1831",
+    "price": 428,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1831G 111114161734.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Audi Rebuilt Turbocharger (CHRA) CHRA-1832",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Audi vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-1832",
+    "price": 240,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 1832 supp 1 111114162140.jpg",
+      "/images/turbocharger-rebuilt/p 1832G 111114162125.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Renault Rebuilt Turbocharger (CHRA) CHRA-210",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Renault vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-210",
+    "price": 222,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 210G 100830101916.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) CHRA-230",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-230",
+    "price": 227,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 230G 100908182240.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-231",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-231",
+    "price": 192,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 231G 100908182515.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) CHRA-252",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-252",
+    "price": 344,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 252G 100923112941.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-253",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-253",
+    "price": 313,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 253G 100923113621.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-264",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-264",
+    "price": 214,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 264G 100930173833.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Ford Rebuilt Turbocharger (CHRA) CHRA-512",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Ford vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-512",
+    "price": 271,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 512G 110310113521.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) CHRA-521",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-521",
+    "price": 181,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 521 supp 1 110103082616.jpg",
+      "/images/turbocharger-rebuilt/p 521G 110103082538.jpg",
+      "/images/turbocharger-rebuilt/p 521G 1101030825385B15D.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) CHRA-529",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-529",
+    "price": 406,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 529G 110106150051.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Ford Rebuilt Turbocharger (CHRA) CHRA-545",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Ford vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-545",
+    "price": 375,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 545G 110118133218.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) CHRA-546",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-546",
+    "price": 183,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 546 supp 1 110118134147.jpg",
+      "/images/turbocharger-rebuilt/p 546G 110118134109.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) CHRA-566",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-566",
+    "price": 466,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 566G 110718145815.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Lancia Rebuilt Turbocharger (CHRA) CHRA-571",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Lancia vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-571",
+    "price": 261,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 571G 110204164949.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Citroen Rebuilt Turbocharger (CHRA) CHRA-572",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Citroen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Citroen",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-572",
+    "price": 272,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Citroen"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 572G 110204165218.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Renault Rebuilt Turbocharger (CHRA) CHRA-573",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Renault vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-573",
+    "price": 188,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 573G 110204165352.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) CHRA-717",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "CHRA-717",
+    "price": 249,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbocharger-rebuilt/p 717G 110325160116.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) 003",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "003",
+    "price": 388,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/CHRA cartridges - Abm-automotive-online.com/003ABM.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Rebuilt Turbocharger (CHRA) 004",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Peugeot vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "004",
+    "price": 351,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/CHRA cartridges - Abm-automotive-online.com/004ABM.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Rebuilt Turbocharger (CHRA) CC25",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Volkswagen vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "CC25",
+    "price": 260,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/CHRA cartridges - Abm-automotive-online.com/cc25 ab.jpg",
+      "/images/CHRA cartridges - Abm-automotive-online.com/cc25 ab5B15D.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Garrett (Universal) Rebuilt Turbocharger (CHRA) GT22",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Garrett (Universal) vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Garrett (Universal)",
+    "fuel_type": "Turbo",
+    "engine_code": "GT22",
+    "price": 215,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Garrett (Universal)"
+    ],
+    "images": [
+      "/images/CHRA cartridges - Abm-automotive-online.com/GT22 (1).jpg",
+      "/images/CHRA cartridges - Abm-automotive-online.com/GT22.jpg",
+      "/images/CHRA cartridges - Abm-automotive-online.com/GT225B15D.jpg",
+      "/images/CHRA cartridges - Abm-automotive-online.com/GT225B15D5B15D.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Garrett (Universal) Rebuilt Turbocharger (CHRA) GT25",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Garrett (Universal) vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Garrett (Universal)",
+    "fuel_type": "Turbo",
+    "engine_code": "GT25",
+    "price": 475,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Garrett (Universal)"
+    ],
+    "images": [
+      "/images/CHRA cartridges - Abm-automotive-online.com/GT25.jpg",
+      "/images/CHRA cartridges - Abm-automotive-online.com/GT255B15D.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  },
+  {
+    "name": "Ford Rebuilt Turbocharger (CHRA) IMGP3809",
+    "description": "High-performance rebuilt turbocharger (CHRA Cartridge) for Ford vehicles. Balanced and tested to meet or exceed OEM specifications. Ready for immediate installation.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3809",
+    "price": 300,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Rebuilt - Like New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/CHRA cartridges - Abm-automotive-online.com/imgp3809 (1).jpg",
+      "/images/CHRA cartridges - Abm-automotive-online.com/imgp3809.jpg"
+    ],
+    "category_id": "cf30785d-b671-4b20-a03b-779d21861dc3",
+    "availability": true
+  }
+]

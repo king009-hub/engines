@@ -1,0 +1,122 @@
+[
+  {
+    "name": "BMW Electric Motor 20210810",
+    "description": "High-efficiency electric drive unit for BMW electric vehicles. Tested for insulation resistance, torque output, and bearing noise. Sustainable and reliable power for your EV.",
+    "brand": "BMW",
+    "fuel_type": "Electric",
+    "engine_code": "20210810",
+    "price": 1372,
+    "mileage": 38779,
+    "year": 2020,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/electric-motors/20210810 154237.jpg",
+      "/images/electric-motors/20210810 154330.jpg"
+    ],
+    "category_id": "e1ec781c-4078-4563-9ee5-a066a76cecbc",
+    "availability": true
+  },
+  {
+    "name": "Tesla Electric Motor 20210817",
+    "description": "High-efficiency electric drive unit for Tesla electric vehicles. Tested for insulation resistance, torque output, and bearing noise. Sustainable and reliable power for your EV.",
+    "brand": "Tesla",
+    "fuel_type": "Electric",
+    "engine_code": "20210817",
+    "price": 1653,
+    "mileage": 13250,
+    "year": 2022,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Tesla"
+    ],
+    "images": [
+      "/images/electric-motors/20210817 103551.jpg",
+      "/images/electric-motors/20210817 103637.jpg"
+    ],
+    "category_id": "e1ec781c-4078-4563-9ee5-a066a76cecbc",
+    "availability": true
+  },
+  {
+    "name": "Tesla Electric Motor PXL 20230524 070707623",
+    "description": "High-efficiency electric drive unit for Tesla electric vehicles. Tested for insulation resistance, torque output, and bearing noise. Sustainable and reliable power for your EV.",
+    "brand": "Tesla",
+    "fuel_type": "Electric",
+    "engine_code": "PXL 20230524 070707623",
+    "price": 1078,
+    "mileage": 16624,
+    "year": 2023,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Tesla"
+    ],
+    "images": [
+      "/images/electric-motors/PXL 20230524 070707623 1.jpg"
+    ],
+    "category_id": "e1ec781c-4078-4563-9ee5-a066a76cecbc",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Electric Motor PXL 20230524 070753259.MP",
+    "description": "High-efficiency electric drive unit for Volkswagen electric vehicles. Tested for insulation resistance, torque output, and bearing noise. Sustainable and reliable power for your EV.",
+    "brand": "Volkswagen",
+    "fuel_type": "Electric",
+    "engine_code": "PXL 20230524 070753259.MP",
+    "price": 2051,
+    "mileage": 13863,
+    "year": 2023,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/electric-motors/PXL 20230524 070753259.MP.jpg"
+    ],
+    "category_id": "e1ec781c-4078-4563-9ee5-a066a76cecbc",
+    "availability": true
+  },
+  {
+    "name": "Tesla Electric Motor PXL 20230524",
+    "description": "High-efficiency electric drive unit for Tesla electric vehicles. Tested for insulation resistance, torque output, and bearing noise. Sustainable and reliable power for your EV.",
+    "brand": "Tesla",
+    "fuel_type": "Electric",
+    "engine_code": "PXL 20230524",
+    "price": 2029,
+    "mileage": 12480,
+    "year": 2019,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Tesla"
+    ],
+    "images": [
+      "/images/electric-motors/PXL 20230524 071051539.jpg",
+      "/images/electric-motors/PXL 20230524 071057977.jpg",
+      "/images/electric-motors/PXL 20230524 071234859.jpg",
+      "/images/electric-motors/PXL 20230524 071243351.jpg"
+    ],
+    "category_id": "e1ec781c-4078-4563-9ee5-a066a76cecbc",
+    "availability": true
+  },
+  {
+    "name": "Smart Electric Motor SMART FORTWO ELECTRIC MOTOR",
+    "description": "High-efficiency electric drive unit for Smart electric vehicles. Tested for insulation resistance, torque output, and bearing noise. Sustainable and reliable power for your EV.",
+    "brand": "Smart",
+    "fuel_type": "Electric",
+    "engine_code": "SMART FORTWO ELECTRIC MOTOR",
+    "price": 2768,
+    "mileage": 5665,
+    "year": 2022,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Smart"
+    ],
+    "images": [
+      "/images/electric-motors/smart electric fortwo 6.jpg",
+      "/images/electric-motors/smart electric motor fortwo 1.jpg"
+    ],
+    "category_id": "e1ec781c-4078-4563-9ee5-a066a76cecbc",
+    "availability": true
+  }
+]

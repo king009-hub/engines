@@ -1,0 +1,520 @@
+[
+  {
+    "name": "Audi AC Compressor 20181204",
+    "description": "High-quality used AC compressor for Audi vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Audi",
+    "fuel_type": "AC Part",
+    "engine_code": "20181204",
+    "price": 132,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/compressor/20181204 100209.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen AC Compressor 4190026002637B01",
+    "description": "High-quality used AC compressor for Volkswagen vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "AC Part",
+    "engine_code": "4190026002637B01",
+    "price": 169,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/compressor/4190026002637B01.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Toyota AC Compressor 4190026002637B02",
+    "description": "High-quality used AC compressor for Toyota vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Toyota",
+    "fuel_type": "AC Part",
+    "engine_code": "4190026002637B02",
+    "price": 204,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Toyota"
+    ],
+    "images": [
+      "/images/compressor/4190026002637B02.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Mini AC Compressor AIRTEC MINI COOPER S INTERCOOLER",
+    "description": "High-quality used AC compressor for Mini vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Mini",
+    "fuel_type": "AC Part",
+    "engine_code": "AIRTEC MINI COOPER S INTERCOOLER",
+    "price": 145,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Mini"
+    ],
+    "images": [
+      "/images/compressor/airtec mini cooper s intercooler.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Audi AC Compressor AUDI",
+    "description": "High-quality used AC compressor for Audi vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Audi",
+    "fuel_type": "AC Part",
+    "engine_code": "AUDI",
+    "price": 254,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/compressor/audi.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Mini AC Compressor CYLINDER",
+    "description": "High-quality used AC compressor for Mini vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Mini",
+    "fuel_type": "AC Part",
+    "engine_code": "CYLINDER",
+    "price": 334,
+    "mileage": 0,
+    "year": 2016,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Mini"
+    ],
+    "images": [
+      "/images/compressor/cylinder.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "BMW AC Compressor CYLINDER1",
+    "description": "High-quality used AC compressor for BMW vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "BMW",
+    "fuel_type": "AC Part",
+    "engine_code": "CYLINDER1",
+    "price": 313,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/compressor/cylinder1.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Honda AC Compressor ENGINE",
+    "description": "High-quality used AC compressor for Honda vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Honda",
+    "fuel_type": "AC Part",
+    "engine_code": "ENGINE",
+    "price": 312,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Honda"
+    ],
+    "images": [
+      "/images/compressor/engine.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Toyota AC Compressor ENGINE1",
+    "description": "High-quality used AC compressor for Toyota vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Toyota",
+    "fuel_type": "AC Part",
+    "engine_code": "ENGINE1",
+    "price": 124,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Toyota"
+    ],
+    "images": [
+      "/images/compressor/engine1.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Honda AC Compressor HONDA1",
+    "description": "High-quality used AC compressor for Honda vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Honda",
+    "fuel_type": "AC Part",
+    "engine_code": "HONDA1",
+    "price": 230,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Honda"
+    ],
+    "images": [
+      "/images/compressor/honda1.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Honda AC Compressor HONDA2",
+    "description": "High-quality used AC compressor for Honda vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Honda",
+    "fuel_type": "AC Part",
+    "engine_code": "HONDA2",
+    "price": 167,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Honda"
+    ],
+    "images": [
+      "/images/compressor/honda2.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Honda AC Compressor HONDA3",
+    "description": "High-quality used AC compressor for Honda vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Honda",
+    "fuel_type": "AC Part",
+    "engine_code": "HONDA3",
+    "price": 337,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Honda"
+    ],
+    "images": [
+      "/images/compressor/honda3.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Toyota AC Compressor IMG 0749",
+    "description": "High-quality used AC compressor for Toyota vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Toyota",
+    "fuel_type": "AC Part",
+    "engine_code": "IMG 0749",
+    "price": 157,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Toyota"
+    ],
+    "images": [
+      "/images/compressor/IMG 0749 ConvertImage.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Audi AC Compressor IMG",
+    "description": "High-quality used AC compressor for Audi vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Audi",
+    "fuel_type": "AC Part",
+    "engine_code": "IMG",
+    "price": 359,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/compressor/IMG 1324.jpg",
+      "/images/compressor/IMG 1386.jpg",
+      "/images/compressor/IMG 1534.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen AC Compressor IMGP3257201",
+    "description": "High-quality used AC compressor for Volkswagen vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "AC Part",
+    "engine_code": "IMGP3257201",
+    "price": 361,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/compressor/IMGP3257201.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Mercedes AC Compressor IMGP4130",
+    "description": "High-quality used AC compressor for Mercedes vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Mercedes",
+    "fuel_type": "AC Part",
+    "engine_code": "IMGP4130",
+    "price": 371,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Mercedes"
+    ],
+    "images": [
+      "/images/compressor/imgp4130.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Lexus AC Compressor LEXIS2",
+    "description": "High-quality used AC compressor for Lexus vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Lexus",
+    "fuel_type": "AC Part",
+    "engine_code": "LEXIS2",
+    "price": 199,
+    "mileage": 0,
+    "year": 2016,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Lexus"
+    ],
+    "images": [
+      "/images/compressor/lexis2.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Lexus AC Compressor LEXIS3",
+    "description": "High-quality used AC compressor for Lexus vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Lexus",
+    "fuel_type": "AC Part",
+    "engine_code": "LEXIS3",
+    "price": 227,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Lexus"
+    ],
+    "images": [
+      "/images/compressor/lexis3.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Lexus AC Compressor LEXUS1",
+    "description": "High-quality used AC compressor for Lexus vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Lexus",
+    "fuel_type": "AC Part",
+    "engine_code": "LEXUS1",
+    "price": 234,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Lexus"
+    ],
+    "images": [
+      "/images/compressor/lexus1.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Mercedes AC Compressor MERCED",
+    "description": "High-quality used AC compressor for Mercedes vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Mercedes",
+    "fuel_type": "AC Part",
+    "engine_code": "MERCED",
+    "price": 166,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Mercedes"
+    ],
+    "images": [
+      "/images/compressor/merced.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Mini AC Compressor MINI COOPER R53 COMPRESSOR",
+    "description": "High-quality used AC compressor for Mini vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Mini",
+    "fuel_type": "AC Part",
+    "engine_code": "MINI COOPER R53 COMPRESSOR",
+    "price": 258,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Mini"
+    ],
+    "images": [
+      "/images/compressor/Mini Cooper R53 1 compressor.jpg",
+      "/images/compressor/Mini Cooper R53 2 compressor.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "BMW AC Compressor COMP-1872",
+    "description": "High-quality used AC compressor for BMW vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "BMW",
+    "fuel_type": "AC Part",
+    "engine_code": "COMP-1872",
+    "price": 390,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/compressor/p 1872 supp 2 111209160023.jpg",
+      "/images/compressor/p 1872G 111209155942.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Mini AC Compressor COMP-299",
+    "description": "High-quality used AC compressor for Mini vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Mini",
+    "fuel_type": "AC Part",
+    "engine_code": "COMP-299",
+    "price": 168,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Mini"
+    ],
+    "images": [
+      "/images/compressor/p 299G 101023100234.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen AC Compressor PXL 20221117",
+    "description": "High-quality used AC compressor for Volkswagen vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "AC Part",
+    "engine_code": "PXL 20221117",
+    "price": 208,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/compressor/PXL 20221117 103926838.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Honda AC Compressor PXL 20260128 123730388",
+    "description": "High-quality used AC compressor for Honda vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Honda",
+    "fuel_type": "AC Part",
+    "engine_code": "PXL 20260128 123730388",
+    "price": 229,
+    "mileage": 0,
+    "year": 2017,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Honda"
+    ],
+    "images": [
+      "/images/compressor/PXL 20260128 123730388_2.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Audi AC Compressor VALEO ELECTRIC COMPRESSOR AUDI S4",
+    "description": "High-quality used AC compressor for Audi vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Audi",
+    "fuel_type": "AC Part",
+    "engine_code": "VALEO ELECTRIC COMPRESSOR AUDI S4",
+    "price": 127,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/compressor/Valeo electric compressor for Audi S4 350 059145605C 3.jpg",
+      "/images/compressor/Valeo electric compressor for Audi S4 350 059145605C 4.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen AC Compressor VOLSW",
+    "description": "High-quality used AC compressor for Volkswagen vehicles. Thoroughly tested for pressure and leaks to ensure optimal cooling performance. Ready for installation.",
+    "brand": "Volkswagen",
+    "fuel_type": "AC Part",
+    "engine_code": "VOLSW",
+    "price": 335,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "Used - Excellent",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/compressor/volsw.jpg"
+    ],
+    "category_id": "0f7e1dab-1864-4e3a-aaa3-43da8cfea490",
+    "availability": true
+  }
+]

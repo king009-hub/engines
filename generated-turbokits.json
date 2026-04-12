@@ -1,0 +1,603 @@
+[
+  {
+    "name": "Renault Turbocharger Rebuild Kit 1HGHFH",
+    "description": "Professional grade turbocharger rebuild kit for Renault vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "1HGHFH",
+    "price": 296,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbokits/1hghfh.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "BMW Turbocharger Rebuild Kit IMGP3118201",
+    "description": "Professional grade turbocharger rebuild kit for BMW vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3118201",
+    "price": 125,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbokits/IMGP3118201.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Turbocharger Rebuild Kit IMGP3527",
+    "description": "Professional grade turbocharger rebuild kit for Volkswagen vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3527",
+    "price": 114,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbokits/imgp3527.jpg",
+      "/images/turbokits/imgp35275B15D.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Audi Turbocharger Rebuild Kit IMGP3529",
+    "description": "Professional grade turbocharger rebuild kit for Audi vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3529",
+    "price": 287,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbokits/imgp3529.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Renault Turbocharger Rebuild Kit IMGP3530",
+    "description": "Professional grade turbocharger rebuild kit for Renault vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3530",
+    "price": 296,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbokits/imgp3530.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Lancia Turbocharger Rebuild Kit IMGP3531",
+    "description": "Professional grade turbocharger rebuild kit for Lancia vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3531",
+    "price": 247,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbokits/imgp3531.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Ford Turbocharger Rebuild Kit IMGP3532",
+    "description": "Professional grade turbocharger rebuild kit for Ford vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3532",
+    "price": 138,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/turbokits/imgp3532.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Lancia Turbocharger Rebuild Kit IMGP3706",
+    "description": "Professional grade turbocharger rebuild kit for Lancia vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3706",
+    "price": 96,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbokits/imgp37065B15D.jpg",
+      "/images/turbokits/imgp37065B15D5B25D.jpg",
+      "/images/turbokits/imgp37065B15D5B25D5B25D.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Turbocharger Rebuild Kit IMGP3729",
+    "description": "Professional grade turbocharger rebuild kit for Peugeot vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3729",
+    "price": 120,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbokits/imgp3729.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Turbocharger Rebuild Kit IMGP3744",
+    "description": "Professional grade turbocharger rebuild kit for Volkswagen vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3744",
+    "price": 114,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbokits/imgp3744.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Turbocharger Rebuild Kit IMGP3778",
+    "description": "Professional grade turbocharger rebuild kit for Peugeot vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3778",
+    "price": 251,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbokits/imgp3778.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Audi Turbocharger Rebuild Kit IMGP3781",
+    "description": "Professional grade turbocharger rebuild kit for Audi vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3781",
+    "price": 247,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbokits/imgp3781.jpg",
+      "/images/turbokits/imgp37815B15D.jpg",
+      "/images/turbokits/imgp37815B15D5B25D.jpg",
+      "/images/turbokits/imgp37815B15D5B25D5B25D.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Renault Turbocharger Rebuild Kit IMGP3782",
+    "description": "Professional grade turbocharger rebuild kit for Renault vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3782",
+    "price": 276,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbokits/imgp3782.jpg",
+      "/images/turbokits/imgp37825B15D.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Turbocharger Rebuild Kit IMGP3785",
+    "description": "Professional grade turbocharger rebuild kit for Peugeot vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3785",
+    "price": 298,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbokits/imgp3785.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Turbocharger Rebuild Kit IMGP3786",
+    "description": "Professional grade turbocharger rebuild kit for Volkswagen vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP3786",
+    "price": 89,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbokits/imgp3786.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Renault Turbocharger Rebuild Kit IMGP4062",
+    "description": "Professional grade turbocharger rebuild kit for Renault vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4062",
+    "price": 217,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbokits/imgp4062.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Turbocharger Rebuild Kit IMGP4211",
+    "description": "Professional grade turbocharger rebuild kit for Peugeot vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4211",
+    "price": 283,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbokits/IMGP4211 ConvertImage.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Audi Turbocharger Rebuild Kit IMGP4425",
+    "description": "Professional grade turbocharger rebuild kit for Audi vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4425",
+    "price": 204,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbokits/imgp4425.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Renault Turbocharger Rebuild Kit IMGP4671",
+    "description": "Professional grade turbocharger rebuild kit for Renault vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4671",
+    "price": 130,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbokits/imgp4671.jpg",
+      "/images/turbokits/imgp46715B15D.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Volkswagen Turbocharger Rebuild Kit IMGP4675",
+    "description": "Professional grade turbocharger rebuild kit for Volkswagen vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Volkswagen",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4675",
+    "price": 288,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "New",
+    "compatibility": [
+      "Volkswagen"
+    ],
+    "images": [
+      "/images/turbokits/imgp4675.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Audi Turbocharger Rebuild Kit IMGP4677",
+    "description": "Professional grade turbocharger rebuild kit for Audi vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4677",
+    "price": 97,
+    "mileage": 0,
+    "year": 2023,
+    "condition": "New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbokits/imgp4677.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Renault Turbocharger Rebuild Kit IMGP4685",
+    "description": "Professional grade turbocharger rebuild kit for Renault vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4685",
+    "price": 295,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbokits/imgp4685.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Ford Turbocharger Rebuild Kit IMGP4687",
+    "description": "Professional grade turbocharger rebuild kit for Ford vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Ford",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4687",
+    "price": 295,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "New",
+    "compatibility": [
+      "Ford"
+    ],
+    "images": [
+      "/images/turbokits/imgp4687.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Peugeot Turbocharger Rebuild Kit IMGP4688",
+    "description": "Professional grade turbocharger rebuild kit for Peugeot vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Peugeot",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4688",
+    "price": 88,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "New",
+    "compatibility": [
+      "Peugeot"
+    ],
+    "images": [
+      "/images/turbokits/imgp4688.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "BMW Turbocharger Rebuild Kit IMGP4690",
+    "description": "Professional grade turbocharger rebuild kit for BMW vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4690",
+    "price": 237,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbokits/imgp4690.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Audi Turbocharger Rebuild Kit IMGP4816",
+    "description": "Professional grade turbocharger rebuild kit for Audi vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "IMGP4816",
+    "price": 168,
+    "mileage": 0,
+    "year": 2020,
+    "condition": "New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbokits/IMGP4816 ConvertImage.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Audi Turbocharger Rebuild Kit SESFQAD",
+    "description": "Professional grade turbocharger rebuild kit for Audi vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Audi",
+    "fuel_type": "Turbo",
+    "engine_code": "SESFQAD",
+    "price": 299,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "New",
+    "compatibility": [
+      "Audi"
+    ],
+    "images": [
+      "/images/turbokits/sesfqad.jpg",
+      "/images/turbokits/sesfqad5B15D.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Lancia Turbocharger Rebuild Kit TURBO",
+    "description": "Professional grade turbocharger rebuild kit for Lancia vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Lancia",
+    "fuel_type": "Turbo",
+    "engine_code": "TURBO",
+    "price": 83,
+    "mileage": 0,
+    "year": 2018,
+    "condition": "New",
+    "compatibility": [
+      "Lancia"
+    ],
+    "images": [
+      "/images/turbokits/turbo garrett tb0338 lancia delta hf integrale 4wd (1).jpg",
+      "/images/turbokits/turbo garrett tb0338 lancia delta hf integrale 4wd (2).jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Alpine Turbocharger Rebuild Kit TURBO",
+    "description": "Professional grade turbocharger rebuild kit for Alpine vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Alpine",
+    "fuel_type": "Turbo",
+    "engine_code": "TURBO",
+    "price": 230,
+    "mileage": 0,
+    "year": 2019,
+    "condition": "New",
+    "compatibility": [
+      "Alpine"
+    ],
+    "images": [
+      "/images/turbokits/turbo garrett tb0387 alpine a610 (1).jpg",
+      "/images/turbokits/turbo garrett tb0387 alpine a610 (2).jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "Renault Turbocharger Rebuild Kit TURBO",
+    "description": "Professional grade turbocharger rebuild kit for Renault vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "Renault",
+    "fuel_type": "Turbo",
+    "engine_code": "TURBO",
+    "price": 173,
+    "mileage": 0,
+    "year": 2022,
+    "condition": "New",
+    "compatibility": [
+      "Renault"
+    ],
+    "images": [
+      "/images/turbokits/turbo tb0235 renault super 5 gt turbo (1).jpg",
+      "/images/turbokits/turbo tb0235 renault super 5 gt turbo (2).jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  },
+  {
+    "name": "BMW Turbocharger Rebuild Kit TW14",
+    "description": "Professional grade turbocharger rebuild kit for BMW vehicles. Includes all necessary components for a complete overhaul. High-precision parts for maximum reliability.",
+    "brand": "BMW",
+    "fuel_type": "Turbo",
+    "engine_code": "TW14",
+    "price": 135,
+    "mileage": 0,
+    "year": 2021,
+    "condition": "New",
+    "compatibility": [
+      "BMW"
+    ],
+    "images": [
+      "/images/turbokits/TW14.jpg"
+    ],
+    "category_id": "62b9a11b-16de-4563-9ee5-a066a76cecbd",
+    "availability": true
+  }
+]
