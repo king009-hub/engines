@@ -130,29 +130,26 @@ const Checkout = () => {
         
         console.log('[Checkout] Requesting payment intent for:', total);
         
+        // Use manual fetch to be 100% sure of the headers
         const { data: { session } } = await supabase.auth.getSession();
-        if (!session) {
-          setError('Please login to complete your purchase.');
-          setLoading(false);
-          return;
-        }
-
+        
         const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-payment-intent`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${session.access_token}`,
+            'Authorization': `Bearer ${session?.access_token || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
             'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || ''
           },
           body: JSON.stringify(payload)
         });
         
         if (!response.ok) {
-          const errorData = await response.json().catch(() => ({ error: 'Unknown server error' }));
+          const errorData = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
           throw new Error(errorData.error || `HTTP ${response.status}`);
         }
         
         const data = await response.json();
+        
         if (data?.clientSecret) {
           setClientSecret(data.clientSecret);
           (window as any)._lastItemsHash = currentItemsHash;
