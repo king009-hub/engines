@@ -20,7 +20,6 @@ const StripeConfig = () => {
   // Local state for components that don't play well with FormData
   const [stripeMode, setStripeMode] = useState<string>('test');
   const [currency, setCurrency] = useState<string>('USD');
-  const [subscriptionEnabled, setSubscriptionEnabled] = useState<boolean>(false);
 
   // Fetch settings with robust error handling
   const { data: settings, isLoading: isSettingsLoading } = useQuery({
@@ -44,7 +43,6 @@ const StripeConfig = () => {
     if (settings) {
       setStripeMode(settings.stripe_mode || 'test');
       setCurrency(settings.currency || 'USD');
-      setSubscriptionEnabled(settings.subscription_enabled || false);
     }
   }, [settings]);
 
@@ -115,7 +113,7 @@ const StripeConfig = () => {
       stripe_webhook_secret: formData.get('stripe_webhook_secret'),
       currency: currency,
       stripe_mode: stripeMode,
-      subscription_enabled: subscriptionEnabled,
+      // subscription_enabled is removed since the column does not exist
     };
     
     await settingsMutation.mutateAsync(data);
@@ -205,17 +203,11 @@ const StripeConfig = () => {
                     <Label className="uppercase text-[10px] font-black tracking-widest text-muted-foreground">Signing Secret</Label>
                     <Input name="stripe_webhook_secret" className="h-12 border-2" type="password" defaultValue={settings?.stripe_webhook_secret} placeholder="whsec_..." />
                   </div>
-                  <div className="flex items-center justify-between p-5 bg-muted/30 border-2 border-dashed rounded-xl">
-                    <div className="space-y-1">
-                      <Label className="uppercase font-black text-xs">Enable Subscriptions</Label>
-                      <p className="text-xs text-muted-foreground font-medium">Activate recurring monthly/yearly billing features</p>
-                    </div>
-                    <Switch checked={subscriptionEnabled} onCheckedChange={setSubscriptionEnabled} />
-                  </div>
+                  {/* Subscription toggle removed as the feature/column is not supported yet */}
                 </CardContent>
               </Card>
 
-              <div className="flex justify-end gap-4">
+              <div className="flex justify-end gap-4 mt-6">
                 <Button type="submit" disabled={isSaving} className="h-14 px-10 font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all">
                   {isSaving ? (
                     <>
