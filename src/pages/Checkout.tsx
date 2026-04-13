@@ -84,28 +84,14 @@ const Checkout = () => {
     }
 
     const init = async () => {
-      // 1. Wait for products metadata to load from database
-      if (isProductsLoading) return;
-      
-      // 2. Check if products data actually returned anything
-      if (!products || products.length === 0) {
-        if (productsError) {
-          setError(`Database error: ${productsError.message || 'Failed to fetch products'}`);
-        } else {
-          setError('Could not find products in your cart. They might have been removed.');
-        }
-        setLoading(false);
-        return;
-      }
-
-      // 3. Check for Stripe configuration
+      // 1. Check for Stripe configuration
       if (!stripePk) {
         setError('Stripe is not configured correctly. Please check your environment variables.');
         setLoading(false);
         return;
       }
 
-      // 4. Optimization: Skip re-creation if items haven't changed
+      // 2. Optimization: Skip re-creation if items haven't changed
       const currentItemsHash = JSON.stringify(items.sort((a, b) => a.product_id.localeCompare(b.product_id)));
       if (clientSecret && (window as any)._lastItemsHash === currentItemsHash) {
         setLoading(false);
@@ -117,18 +103,15 @@ const Checkout = () => {
         setError(null);
         setLoading(true);
 
+        // Optimization: We only need product_id and quantity. The server will fetch the rest.
         const payload = {
-          items: items.map(it => {
-            const p = products.find(x => x.id === it.product_id);
-            return {
-              name: p?.name,
-              price: p ? Number(p.price) : 0,
-              quantity: it.quantity
-            };
-          })
+          items: items.map(it => ({
+            product_id: it.product_id,
+            quantity: it.quantity
+          }))
         };
         
-        console.log('[Checkout] Requesting payment intent for:', total);
+        console.log('[Checkout] Requesting payment intent...');
         
         // Use manual fetch to be 100% sure of the headers
         const { data: { session } } = await supabase.auth.getSession();
@@ -149,7 +132,6 @@ const Checkout = () => {
         }
         
         const data = await response.json();
-        
         if (data?.clientSecret) {
           setClientSecret(data.clientSecret);
           (window as any)._lastItemsHash = currentItemsHash;
@@ -165,7 +147,7 @@ const Checkout = () => {
     };
 
     init();
-  }, [items, products, isProductsLoading, productsError, navigate, total, clientSecret]);
+  }, [items, navigate, clientSecret]);
 
   return (
     <Layout title="Checkout">

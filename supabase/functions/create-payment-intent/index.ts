@@ -8,6 +8,11 @@ const cors = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
 }
 
+const supabase = createClient(
+  Deno.env.get('SUPABASE_URL') ?? '',
+  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+)
+
 // Cache settings to avoid db hits on every call
 let cachedSettings: any = null;
 let settingsCacheTime = 0;
@@ -19,11 +24,6 @@ serve(async (req) => {
   }
 
   try {
-    const supabase = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-    )
-
     const now = Date.now();
     if (!cachedSettings || (now - settingsCacheTime > CACHE_TTL)) {
       const { data: settings, error: settingsError } = await supabase
@@ -50,8 +50,21 @@ serve(async (req) => {
       return new Response(JSON.stringify({ error: 'No items provided' }), { headers: cors, status: 400 })
     }
 
+    // Optimization: Fetch prices from the database directly for security and speed
+    const productIds = items.map((i: any) => i.product_id || i.id).filter(Boolean)
+    const { data: products, error: productsError } = await supabase
+      .from('products')
+      .select('id, name, price')
+      .in('id', productIds)
+
+    if (productsError || !products) {
+      throw new Error('Failed to fetch product information')
+    }
+
     const amount = items.reduce((sum: number, i: any) => {
-      const price = Number(i.price || 0)
+      const p = products.find(x => x.id === (i.product_id || i.id))
+      if (!p) return sum
+      const price = Number(p.price || 0)
       const qty = Number(i.quantity || 1)
       return sum + Math.max(0, Math.round(price * 100)) * qty
     }, 0)
@@ -89,7 +102,15 @@ serve(async (req) => {
         currency: (currency || settings.currency || 'USD').toUpperCase(),
         status: 'pending',
         stripe_payment_intent_id: intent.id,
-        metadata: { items: items.map(i => ({ name: i.name, qty: i.quantity })) }
+        metadata: { 
+          items: items.map(i => {
+            const p = products.find(x => x.id === (i.product_id || i.id));
+            return { 
+              name: p?.name || 'Unknown', 
+              qty: i.quantity 
+            };
+          }) 
+        }
       })
     } catch (dbErr) {
       console.error('Failed to log payment to DB:', dbErr.message)
