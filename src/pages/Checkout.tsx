@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useCart } from '@/hooks/useCart';
 import { useCartProducts } from '@/hooks/useProducts';
+import { useAuth } from '@/hooks/useAuth';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Button } from '@/components/ui/button';
