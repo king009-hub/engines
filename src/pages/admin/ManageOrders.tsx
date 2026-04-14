@@ -18,7 +18,7 @@ const ManageOrders = () => {
   const { data: orders } = useQuery({
     queryKey: ['admin-orders'],
     queryFn: async () => {
-      const { data, error } = await supabase.from('orders').select('id, created_at, total_amount, status, customer_id, items').order('created_at', { ascending: false });
+      const { data, error } = await supabase.from('orders').select('id, created_at, total, status, user_id, email, phone, shipping_address').order('created_at', { ascending: false });
       if (error) throw error;
       return data;
     },
@@ -43,6 +43,8 @@ const ManageOrders = () => {
               <thead className="bg-muted">
                 <tr>
                   <th className="text-left px-4 py-3 font-bold uppercase text-xs text-muted-foreground">Order ID</th>
+                  <th className="text-left px-4 py-3 font-bold uppercase text-xs text-muted-foreground">Customer</th>
+                  <th className="text-left px-4 py-3 font-bold uppercase text-xs text-muted-foreground">Contact</th>
                   <th className="text-left px-4 py-3 font-bold uppercase text-xs text-muted-foreground">Status</th>
                   <th className="text-left px-4 py-3 font-bold uppercase text-xs text-muted-foreground">Total</th>
                   <th className="text-left px-4 py-3 font-bold uppercase text-xs text-muted-foreground">Date</th>
@@ -53,13 +55,20 @@ const ManageOrders = () => {
                   <tr key={o.id} className="hover:bg-muted/30">
                     <td className="px-4 py-3 font-mono text-xs text-foreground">{o.id.slice(0, 8)}...</td>
                     <td className="px-4 py-3">
-                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded capitalize">{o.status}</span>
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-foreground truncate max-w-[150px]">{o.email || 'Guest'}</span>
+                        <span className="text-[10px] text-muted-foreground truncate max-w-[150px]">{o.shipping_address || 'No address'}</span>
+                      </div>
+                    </td>
+                    <td className="px-4 py-3 text-muted-foreground text-xs">{o.phone || '—'}</td>
+                    <td className="px-4 py-3">
+                      <span className="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded capitalize">{o.status}</span>
                     </td>
                     <td className="px-4 py-3 font-bold text-foreground">${Math.round(Number(o.total))}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{new Date(o.created_at).toLocaleDateString()}</td>
+                    <td className="px-4 py-3 text-muted-foreground text-xs">{new Date(o.created_at).toLocaleDateString()}</td>
                   </tr>
                 )) : (
-                  <tr><td colSpan={4} className="px-4 py-8 text-center text-muted-foreground">No orders yet</td></tr>
+                  <tr><td colSpan={6} className="px-4 py-8 text-center text-muted-foreground">No orders yet</td></tr>
                 )}
               </tbody>
             </table>

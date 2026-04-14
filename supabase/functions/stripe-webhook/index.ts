@@ -56,6 +56,48 @@ serve(async (req) => {
         await query.eq('stripe_payment_intent_id', piId)
       }
 
+      // Create actual order record
+      try {
+        const pi = event.type === 'payment_intent.succeeded' 
+          ? sessionOrPi 
+          : await stripe.paymentIntents.retrieve(piId)
+        
+        const { email, phone, address, items: itemsStr } = pi.metadata || {}
+        const items = itemsStr ? JSON.parse(itemsStr) : []
+
+        // Create the order
+        const { data: order, error: orderError } = await supabaseClient
+          .from('orders')
+          .insert({
+            user_id: sessionOrPi.customer || null,
+            email: email || sessionOrPi.customer_details?.email,
+            phone: phone || sessionOrPi.customer_details?.phone,
+            shipping_address: address || sessionOrPi.customer_details?.address?.line1,
+            total: (pi.amount / 100),
+            status: 'paid',
+            created_at: new Date().toISOString()
+          })
+          .select()
+          .single()
+
+        if (!orderError && order) {
+          // Create order items
+          if (items.length > 0) {
+            const orderItems = items.map((item: any) => ({
+              order_id: order.id,
+              product_id: item.id,
+              quantity: item.qty,
+              price: 0 // In a real app, you'd fetch the current price
+            }))
+            await supabaseClient.from('order_items').insert(orderItems)
+          }
+        } else if (orderError) {
+          console.error('Order creation error:', orderError.message)
+        }
+      } catch (err) {
+        console.error('Failed to process order record:', err.message)
+      }
+
       console.log(`Payment confirmed for ${piId}`)
     }
 

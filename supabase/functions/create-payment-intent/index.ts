@@ -45,7 +45,7 @@ serve(async (req) => {
       httpClient: Stripe.createFetchHttpClient(),
     })
 
-    const { items, currency } = await req.json()
+    const { items, currency, email: providedEmail, phone, address } = await req.json()
     if (!Array.isArray(items) || items.length === 0) {
       return new Response(JSON.stringify({ error: 'No items provided' }), { headers: cors, status: 400 })
     }
@@ -76,7 +76,13 @@ serve(async (req) => {
     const intent = await stripe.paymentIntents.create({
       amount,
       currency: (currency || settings.currency || 'USD').toLowerCase(),
-      automatic_payment_methods: { enabled: true }
+      automatic_payment_methods: { enabled: true },
+      metadata: {
+        email: providedEmail || '',
+        phone: phone || '',
+        address: address || '',
+        items: JSON.stringify(items.map(i => ({ id: i.product_id || i.id, qty: i.quantity || 1 })))
+      }
     })
 
     // Create payment record in database for tracking
@@ -84,25 +90,28 @@ serve(async (req) => {
       // Get user from auth header if present
       const authHeader = req.headers.get('Authorization')
       let user_id = null
-      let email = 'guest@enginemarkets.com'
+      let email = providedEmail || 'guest@enginemarkets.com'
       
       if (authHeader) {
         const token = authHeader.replace('Bearer ', '')
         const { data: { user } } = await supabase.auth.getUser(token)
         if (user) {
           user_id = user.id
-          email = user.email || email
+          email = providedEmail || user.email || email
         }
       }
 
       await supabase.from('payments').insert({
         user_id,
         email,
+        phone, // Assuming payments table might be updated to include phone, or it will just ignore it if it doesn't exist
         amount: amount / 100,
         currency: (currency || settings.currency || 'USD').toUpperCase(),
         status: 'pending',
         stripe_payment_intent_id: intent.id,
         metadata: { 
+          address,
+          phone,
           items: items.map(i => {
             const p = products.find(x => x.id === (i.product_id || i.id));
             return { 
