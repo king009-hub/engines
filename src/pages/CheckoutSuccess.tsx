@@ -18,9 +18,15 @@ const CheckoutSuccess = () => {
       <div className="container mx-auto px-4 py-16 text-center">
         <CheckCircle2 className="h-20 w-20 mx-auto text-green-500 mb-6" />
         <h1 className="text-3xl font-black uppercase text-foreground mb-4">Payment Successful!</h1>
-        <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">
+        <p className="text-muted-foreground text-lg mb-4 max-w-md mx-auto">
           Thank you for your order. We have received your payment and are processing your engine parts for shipment.
         </p>
+        <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-8 max-w-md mx-auto">
+          <p className="text-sm font-bold text-primary uppercase tracking-tight mb-2">Account Created!</p>
+          <p className="text-xs text-muted-foreground">
+            A secure account has been created for you using your email. You can now view your order status in your account panel. Use the "Forgot Password" link on the login page to set your password.
+          </p>
+        </div>
         <div className="flex justify-center gap-4">
           <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold uppercase">
             <Link to="/account">View My Orders</Link>

@@ -33,3 +33,4 @@ public/images/
 *.njsproj
 *.sln
 *.sw?
+node_modules

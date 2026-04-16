@@ -39,6 +39,7 @@ const ManageCategories = lazy(() => import("./pages/admin/ManageCategories"));
 const ManageBrands = lazy(() => import("./pages/admin/ManageBrands"));
 const ManageOrders = lazy(() => import("./pages/admin/ManageOrders"));
 const ManageQuotes = lazy(() => import("./pages/admin/ManageQuotes"));
+const ManageUsers = lazy(() => import("./pages/admin/ManageUsers"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Simple loading fallback
@@ -174,6 +175,14 @@ const RealtimeWrapper = () => {
                 element={
                   <ProtectedRoute adminOnly>
                     <ManageQuotes />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/admin/users" 
+                element={
+                  <ProtectedRoute adminOnly>
+                    <ManageUsers />
                   </ProtectedRoute>
                 } 
               />

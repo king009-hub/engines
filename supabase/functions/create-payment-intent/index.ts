@@ -92,7 +92,56 @@ serve(async (req) => {
       let user_id = null
       let email = providedEmail || 'guest@enginemarkets.com'
       
-      if (authHeader) {
+      // Auto-Registration Logic for Guest users
+      if (!authHeader && providedEmail) {
+        console.log(`[Auto-Registration] Checking user for email: ${providedEmail}`)
+        
+        // Use service role key to manage users
+        const supabaseAdmin = createClient(
+          Deno.env.get('SUPABASE_URL') ?? '',
+          Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+        )
+
+        // 1. Check if user already exists
+        const { data: existingUsers, error: listError } = await supabaseAdmin.auth.admin.listUsers()
+        const existingUser = existingUsers?.users.find(u => u.email === providedEmail)
+
+        if (!existingUser) {
+          console.log(`[Auto-Registration] Creating new user for: ${providedEmail}`)
+          // Create new user with a temporary password
+          const { data: newUser, error: signUpError } = await supabaseAdmin.auth.admin.createUser({
+            email: providedEmail,
+            email_confirm: true, // Auto-confirm email
+            user_metadata: { 
+              full_name: providedEmail.split('@')[0], // Use email part as name initially
+              phone: phone || '' 
+            }
+          })
+
+          if (!signUpError && newUser?.user) {
+            user_id = newUser.user.id
+            email = providedEmail
+            
+            // Create profile entry manually (if trigger doesn't exist)
+            await supabaseAdmin.from('profiles').upsert({
+              id: user_id,
+              email: providedEmail,
+              phone: phone || '',
+              address: address || '',
+              full_name: providedEmail.split('@')[0]
+            })
+          }
+        } else {
+          user_id = existingUser.id
+          email = providedEmail
+          
+          // Update profile with latest phone/address
+          await supabaseAdmin.from('profiles').update({
+            phone: phone || '',
+            address: address || ''
+          }).eq('id', user_id)
+        }
+      } else if (authHeader) {
         const token = authHeader.replace('Bearer ', '')
         const { data: { user } } = await supabase.auth.getUser(token)
         if (user) {
@@ -104,7 +153,7 @@ serve(async (req) => {
       await supabase.from('payments').insert({
         user_id,
         email,
-        phone, // Assuming payments table might be updated to include phone, or it will just ignore it if it doesn't exist
+        phone,
         amount: amount / 100,
         currency: (currency || settings.currency || 'USD').toUpperCase(),
         status: 'pending',
@@ -123,7 +172,6 @@ serve(async (req) => {
       })
     } catch (dbErr) {
       console.error('Failed to log payment to DB:', dbErr.message)
-      // We don't throw here to avoid blocking the payment if only logging fails
     }
 
     return new Response(JSON.stringify({ clientSecret: intent.client_secret }), {

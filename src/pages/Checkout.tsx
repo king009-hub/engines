@@ -8,7 +8,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
-import { Loader2 } from 'lucide-react';
+import { Loader2, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const stripePk = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string | undefined;
@@ -175,6 +175,14 @@ const Checkout = () => {
           <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
             <h2 className="text-lg font-bold uppercase mb-4 tracking-tight">Customer Information</h2>
             <form onSubmit={handleStartPayment} className="space-y-4">
+              <div className="bg-primary/5 border border-primary/20 rounded-lg p-3 mb-4">
+                <p className="text-xs text-primary font-bold uppercase tracking-tight flex items-center gap-2">
+                  <ShieldCheck className="h-3 w-3" /> Auto-Registration Enabled
+                </p>
+                <p className="text-[10px] text-muted-foreground mt-1">
+                  We will automatically create a secure account for you using your email address so you can track your order.
+                </p>
+              </div>
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase text-muted-foreground">Email Address</label>
                 <input 
