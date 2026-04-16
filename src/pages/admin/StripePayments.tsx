@@ -90,10 +90,10 @@ const StripePayments = () => {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="uppercase text-xs font-bold">Email</TableHead>
+                    <TableHead className="uppercase text-xs font-bold">Email / Phone</TableHead>
                     <TableHead className="uppercase text-xs font-bold">Amount</TableHead>
                     <TableHead className="uppercase text-xs font-bold">Status</TableHead>
-                    <TableHead className="uppercase text-xs font-bold">Transaction ID</TableHead>
+                    <TableHead className="uppercase text-xs font-bold">Failure Reason</TableHead>
                     <TableHead className="uppercase text-xs font-bold text-right">Date</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -107,10 +107,15 @@ const StripePayments = () => {
                   ) : (
                     payments.map((payment) => (
                       <TableRow key={payment.id}>
-                        <TableCell className="font-medium">{payment.email}</TableCell>
                         <TableCell>
-                          <span className="font-bold">${payment.amount}</span>
-                          <span className="text-xs text-muted-foreground ml-1 uppercase">{payment.currency}</span>
+                          <div className="flex flex-col">
+                            <span className="font-medium text-foreground leading-none mb-1">{payment.email}</span>
+                            <span className="text-[10px] text-muted-foreground font-mono">{payment.phone || 'No phone'}</span>
+                          </div>
+                        </TableCell>
+                        <TableCell>
+                          <span className="font-bold text-foreground">${payment.amount}</span>
+                          <span className="text-[10px] text-muted-foreground ml-1 uppercase">{payment.currency}</span>
                         </TableCell>
                         <TableCell>
                           <Badge 
@@ -120,11 +125,19 @@ const StripePayments = () => {
                             {payment.status}
                           </Badge>
                         </TableCell>
-                        <TableCell className="font-mono text-xs text-muted-foreground">
-                          {payment.stripe_payment_intent_id || 'N/A'}
+                        <TableCell className="max-w-[200px]">
+                          {payment.status === 'failed' ? (
+                            <span className="text-xs text-red-500 font-medium italic line-clamp-2">
+                              {payment.failure_reason || 'Unknown error'}
+                            </span>
+                          ) : payment.status === 'pending' ? (
+                            <span className="text-[10px] text-muted-foreground uppercase tracking-tight">Attempt in progress</span>
+                          ) : (
+                            <span className="text-[10px] text-green-600 uppercase font-bold tracking-tight">Successful</span>
+                          )}
                         </TableCell>
-                        <TableCell className="text-right text-muted-foreground text-xs">
-                          {new Date(payment.created_at).toLocaleDateString()} {new Date(payment.created_at).toLocaleTimeString()}
+                        <TableCell className="text-right text-muted-foreground text-xs whitespace-nowrap">
+                          {new Date(payment.created_at).toLocaleDateString()}
                         </TableCell>
                       </TableRow>
                     ))

@@ -206,7 +206,10 @@ const AdminDashboard = () => {
                 {recentPayments?.length ? recentPayments.map((payment) => (
                   <div key={payment.id} className="p-4 flex items-center justify-between hover:bg-muted/10 transition-colors">
                     <div>
-                      <p className="font-bold text-sm text-foreground leading-none mb-1">{payment.email}</p>
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="font-bold text-sm text-foreground leading-none">{payment.email}</p>
+                        {payment.phone && <span className="text-[10px] text-muted-foreground font-mono">{payment.phone}</span>}
+                      </div>
                       <div className="flex items-center gap-2">
                         <span className="text-[10px] font-black text-primary uppercase">${payment.amount}</span>
                         <span className={`text-[10px] font-black uppercase px-1.5 py-0.5 rounded ${
@@ -215,6 +218,11 @@ const AdminDashboard = () => {
                         }`}>
                           {payment.status}
                         </span>
+                        {payment.status === 'failed' && (
+                          <span className="text-[10px] text-red-500 font-bold italic truncate max-w-[150px]">
+                            {payment.failure_reason || 'Unknown error'}
+                          </span>
+                        )}
                       </div>
                     </div>
                     <div className="text-[10px] font-bold text-muted-foreground uppercase">

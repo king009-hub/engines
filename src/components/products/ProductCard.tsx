@@ -9,6 +9,7 @@ import { useCart } from '@/hooks/useCart';
 import { ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { getOptimizedImageUrl } from '@/lib/image-utils';
 
 interface ProductCardProps {
   product: Product;
@@ -51,11 +52,8 @@ const ProductCard = memo(({ product }: ProductCardProps) => {
     toast.success(t('cart.added_success') || 'Added to basket');
   };
 
-  const imageUrl = product.images?.[0] || '/placeholder.svg';
-  // Use properly encoded URL to prevent parsing errors
-  const encodedImageUrl = encodeURI(imageUrl).replace(/%25/g, '%');
-  // Try to use webp version if it exists (assuming it was generated)
-  const webpUrl = encodedImageUrl.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+  const imageUrl = product.images?.[0];
+  const optimizedUrl = useMemo(() => getOptimizedImageUrl(imageUrl, { width: 400, quality: 70 }), [imageUrl]);
 
   return (
     <div className="group relative">
@@ -66,16 +64,13 @@ const ProductCard = memo(({ product }: ProductCardProps) => {
       >
         {/* Image with Skeleton Placeholder and Fixed Aspect Ratio */}
         <div className="aspect-[4/3] overflow-hidden bg-muted mb-3 relative rounded-lg">
-          <picture>
-            <source srcSet={webpUrl} type="image/webp" />
-            <img
-              src={encodedImageUrl}
-              alt={translatedName}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
+          <img
+            src={optimizedUrl}
+            alt={translatedName}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         {/* Info - minimal like reference */}

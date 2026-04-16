@@ -17,8 +17,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const getInitialSession = async () => {
       try {
         console.log('[AuthContext] Fetching session...');
-        // Increased timeout to 30s for slow connections
-        const { data: { session }, error: sessionError } = await withTimeout(supabase.auth.getSession(), 30000);
+        // Reduced timeout to 15s for initial load to prevent blocking too long
+        const { data: { session }, error: sessionError } = await withTimeout(supabase.auth.getSession(), 15000);
         if (sessionError) throw sessionError;
 
         if (mounted) {
@@ -33,20 +33,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           }
         }
       } catch (error: any) {
-        console.error('[AuthContext] Error checking auth session:', error.message || error);
+        console.error('[AuthContext] Error checking auth session (timed out or failed):', error.message || error);
         // Don't get stuck in loading even if session fetch fails
-        if (mounted) setLoading(false);
+        if (mounted) {
+          setLoading(false);
+          // If session fetch times out, we assume no session for now
+          // but onAuthStateChange might still fire later
+        }
       }
     };
 
     const checkAdminRole = async (userId: string) => {
       try {
         console.log('[AuthContext] Checking admin role (background)...');
-        // Increased timeout to 30s for slow connections
+        // Background check can have a reasonable timeout
         const { data, error: rpcError } = await withTimeout(supabase.rpc('has_role', { 
           _user_id: userId, 
           _role: 'admin' 
-        }), 30000);
+        }), 20000);
         
         if (mounted) {
           if (rpcError) throw rpcError;

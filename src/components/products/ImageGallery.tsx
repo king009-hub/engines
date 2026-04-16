@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { getOptimizedImageUrl } from '@/lib/image-utils';
 
 interface ImageGalleryProps {
   images: string[];
@@ -8,29 +9,26 @@ interface ImageGalleryProps {
 const ImageGallery = ({ images, name }: ImageGalleryProps) => {
   const [selected, setSelected] = useState(0);
   const displayImages = images.length ? images : ['/placeholder.svg'];
-  const currentImage = displayImages[selected];
   
-  // Encode URL to prevent srcset parsing warnings
-  const encodedImage = encodeURI(currentImage).replace(/%25/g, '%');
-  const webpUrl = encodedImage.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+  const optimizedMain = useMemo(() => 
+    getOptimizedImageUrl(displayImages[selected], { width: 800, quality: 80 }), 
+  [displayImages, selected]);
 
   return (
     <div className="space-y-3">
       <div className="aspect-square bg-muted rounded-lg overflow-hidden border border-border">
-        <picture>
-          <source srcSet={webpUrl} type="image/webp" />
-          <img
-            src={encodedImage}
-            alt={name}
-            className="w-full h-full object-cover"
-          />
-        </picture>
+        <img
+          src={optimizedMain}
+          alt={name}
+          className="w-full h-full object-cover"
+          loading="eager"
+          decoding="sync"
+        />
       </div>
       {displayImages.length > 1 && (
-        <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
           {displayImages.map((img, i) => {
-            const encodedThumb = encodeURI(img).replace(/%25/g, '%');
-            const thumbWebp = encodedThumb.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+            const thumbUrl = getOptimizedImageUrl(img, { width: 100, height: 100, quality: 60 });
             return (
               <button
                 key={i}
@@ -39,10 +37,12 @@ const ImageGallery = ({ images, name }: ImageGalleryProps) => {
                   i === selected ? 'border-primary' : 'border-border hover:border-muted-foreground'
                 }`}
               >
-                <picture>
-                  <source srcSet={thumbWebp} type="image/webp" />
-                  <img src={encodedThumb} alt={`${name} ${i + 1}`} className="w-full h-full object-cover" />
-                </picture>
+                <img 
+                  src={thumbUrl} 
+                  alt={`${name} ${i + 1}`} 
+                  className="w-full h-full object-cover" 
+                  loading="lazy"
+                />
               </button>
             );
           })}

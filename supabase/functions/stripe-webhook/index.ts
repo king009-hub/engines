@@ -103,15 +103,18 @@ serve(async (req) => {
 
     if (event.type === 'payment_intent.payment_failed') {
       const pi = event.data.object as any
+      const errorMessage = pi.last_payment_error?.message || 'Payment failed'
+      
       await supabaseClient
         .from('payments')
         .update({
           status: 'failed',
+          failure_reason: errorMessage,
           updated_at: new Date().toISOString()
         })
         .eq('stripe_payment_intent_id', pi.id)
       
-      console.log(`Payment failed for intent ${pi.id}`)
+      console.log(`Payment failed for intent ${pi.id}: ${errorMessage}`)
     }
 
     return new Response(JSON.stringify({ received: true }), { status: 200 })
