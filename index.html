@@ -2,6 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Optimization: Block problematic third-party trackers that cause CORS errors and slow down loading
+      (function() {
+        const blockedHosts = ['api2.branch.io', 'api.branch.io'];
+        const originalFetch = window.fetch;
+        window.fetch = function(url, options) {
+          if (typeof url === 'string' && blockedHosts.some(host => url.includes(host))) {
+            return Promise.reject(new Error('Blocked by optimization'));
+          }
+          return originalFetch.apply(this, arguments);
+        };
+        const originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url) {
+          if (typeof url === 'string' && blockedHosts.some(host => url.includes(host))) {
+            this.abort();
+            return;
+          }
+          return originalOpen.apply(this, arguments);
+        };
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Engine Markets | Used Engines, Gearboxes & Auto Parts</title>
     <meta name="description" content="Find high-quality used engines, gearboxes, and auto parts at Engine Markets. We offer a wide range of tested and verified automotive parts with fast delivery across Europe.">
@@ -34,7 +55,7 @@
     <!-- Pre-load Stripe for faster checkout -->
     <link rel="preconnect" href="https://js.stripe.com">
     <script src="https://js.stripe.com/v3/" async></script>
-  <script type="module" crossorigin src="./assets/index-DFhb2P8Z.js"></script>
+  <script type="module" crossorigin src="./assets/index-jNEHHKvI.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/query-vendor-B5jppBZd.js">
   <link rel="modulepreload" crossorigin href="./assets/forms-vendor-qlunRAMb.js">
   <link rel="modulepreload" crossorigin href="./assets/react-vendor-DSO9o8SP.js">
