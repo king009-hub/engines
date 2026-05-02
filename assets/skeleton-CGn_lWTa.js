@@ -1,1 +1,0 @@
-import{j as m}from"./vendor-utils-CCResyfZ.js";import{c as o}from"./index-BKV3G4SI.js";function n({className:e,...t}){return m.jsx("div",{className:o("animate-pulse rounded-md bg-muted",e),...t})}export{n as S};

@@ -46,7 +46,22 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://enginemarkets.com/" />
     
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <script>
+      // Force unregister any existing service workers that might be causing network errors
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister();
+            console.log('[ServiceWorker] Unregistered rogue worker:', registration);
+          }
+        }).catch(function(err) {
+          console.error('[ServiceWorker] Unregistration failed:', err);
+        });
+      }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,12 +70,12 @@
     
     <!-- Pre-connect to Stripe for faster checkout when needed -->
     <link rel="preconnect" href="https://js.stripe.com">
-  <script type="module" crossorigin src="./assets/index-BKV3G4SI.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/vendor-utils-CCResyfZ.js">
-  <link rel="modulepreload" crossorigin href="./assets/vendor-forms-BIC9uF6R.js">
-  <link rel="modulepreload" crossorigin href="./assets/vendor-react-ZgKj7nrv.js">
-  <link rel="modulepreload" crossorigin href="./assets/vendor-ui-4cEfXoOI.js">
-  <link rel="stylesheet" crossorigin href="./assets/index-BOs9m-80.css">
+  <script type="module" crossorigin src="/assets/index-BVAMlYvH.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-utils-CCResyfZ.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-forms-BIC9uF6R.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZgKj7nrv.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-ui-4cEfXoOI.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BOs9m-80.css">
 </head>
 
   <body>
