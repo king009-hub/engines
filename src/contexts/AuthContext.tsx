@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import type { User, Session } from '@supabase/supabase-js';
-import { withTimeout } from '@/lib/supabase-utils';
 import { AuthContext } from './AuthContextObject';
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -11,18 +10,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    console.log('[AuthContext] Initializing...');
     let mounted = true;
 
     const getInitialSession = async () => {
       try {
-        console.log('[AuthContext] Fetching session...');
-        // Reduced timeout to 15s for initial load to prevent blocking too long
-        const { data: { session }, error: sessionError } = await withTimeout(supabase.auth.getSession(), 15000);
+        // Remove custom timeout to let Supabase handle its own connection
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         if (sessionError) throw sessionError;
 
         if (mounted) {
-          console.log('[AuthContext] Session found:', !!session);
           setSession(session);
           setUser(session?.user ?? null);
           
@@ -33,32 +29,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           }
         }
       } catch (error: any) {
-        console.error('[AuthContext] Error checking auth session (timed out or failed):', error.message || error);
-        // Don't get stuck in loading even if session fetch fails
         if (mounted) {
           setLoading(false);
-          // If session fetch times out, we assume no session for now
-          // but onAuthStateChange might still fire later
         }
       }
     };
 
     const checkAdminRole = async (userId: string) => {
       try {
-        console.log('[AuthContext] Checking admin role (background)...');
-        // Background check can have a reasonable timeout
-        const { data, error: rpcError } = await withTimeout(supabase.rpc('has_role', { 
+        const { data, error: rpcError } = await supabase.rpc('has_role', { 
           _user_id: userId, 
           _role: 'admin' 
-        }), 20000);
+        });
         
         if (mounted) {
           if (rpcError) throw rpcError;
-          console.log('[AuthContext] Is admin:', !!data);
           setIsAdmin(!!data);
         }
       } catch (error: any) {
-        console.error('[AuthContext] Admin role check failed:', error.message || error);
       } finally {
         if (mounted) setLoading(false);
       }
@@ -67,7 +55,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     getInitialSession();
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log('[AuthContext] Auth state changed:', event);
       if (!mounted) return;
       
       setSession(session);
@@ -75,16 +62,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       
       if (session?.user) {
         try {
-          // Increased timeout to 30s for slow connections
-          const { data, error: rpcError } = await withTimeout(supabase.rpc('has_role', { 
+          const { data, error: rpcError } = await supabase.rpc('has_role', { 
             _user_id: session.user.id, 
             _role: 'admin' 
-          }), 30000);
+          });
           
           if (rpcError) throw rpcError;
           setIsAdmin(!!data);
         } catch (error: any) {
-          console.error('[AuthContext] Error checking admin role on change:', error.message || error);
           setIsAdmin(false);
         }
       } else {
@@ -108,12 +93,4 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       {children}
     </AuthContext.Provider>
   );
-};
-
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
 };

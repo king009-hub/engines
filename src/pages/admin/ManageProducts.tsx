@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useAuth } from '@/hooks/useAuth';
@@ -12,9 +12,9 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { useQueryClient } from '@tanstack/react-query';
-import { ArrowLeft, Plus, Pencil, Trash2, Loader2, Youtube } from 'lucide-react';
+import { ArrowLeft, Plus, Pencil, Trash2, Loader2, Youtube, Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { FUEL_TYPES } from '@/lib/constants';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import ImageUpload from '@/components/admin/ImageUpload';
 
 interface ProductForm {
@@ -43,17 +43,40 @@ const emptyForm: ProductForm = {
   youtube_url: '',
 };
 
+const ITEMS_PER_PAGE = 20;
+
 const ManageProducts = () => {
   const { user, isAdmin, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
   const queryClient = useQueryClient();
-  const { data, isLoading } = useProducts({ per_page: 100 });
+  
+  const [searchInput, setSearchInput] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  // Memoize filters to prevent re-fetch loops
+  const filters = useMemo(() => ({ 
+    per_page: ITEMS_PER_PAGE,
+    page: currentPage,
+    search: searchTerm,
+    sort: 'newest' as const
+  }), [currentPage, searchTerm]);
+
+  const { data, isLoading } = useProducts(filters);
   const { data: categories } = useCategories();
   const { data: brands, isLoading: brandsLoading } = useBrands();
   const [editingId, setEditingId] = useState<string | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [form, setForm] = useState<ProductForm>(emptyForm);
+
+  const totalPages = data ? Math.ceil(data.total / ITEMS_PER_PAGE) : 0;
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSearchTerm(searchInput);
+    setCurrentPage(1);
+  };
 
   const getYouTubeEmbedUrl = (url: string | null) => {
     if (!url) return null;
@@ -205,17 +228,42 @@ const ManageProducts = () => {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+          <div className="flex items-center gap-4 w-full md:w-auto">
             <Button asChild variant="outline" size="sm">
               <Link to="/admin"><ArrowLeft className="h-4 w-4" /></Link>
             </Button>
             <h1 className="text-2xl font-black uppercase text-foreground">Manage Products</h1>
           </div>
-          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-            <Button onClick={openAdd} className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
-              <Plus className="h-4 w-4" /> Add Product
-            </Button>
+          
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
+            <form onSubmit={handleSearch} className="relative w-full sm:w-64">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search products..."
+                value={searchInput}
+                onChange={e => setSearchInput(e.target.value)}
+                className="pl-9 pr-10"
+              />
+              {searchInput && (
+                <button 
+                  type="button"
+                  onClick={() => {
+                    setSearchInput('');
+                    setSearchTerm('');
+                    setCurrentPage(1);
+                  }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                >
+                  <Trash2 className="h-3 w-3" />
+                </button>
+              )}
+            </form>
+            
+            <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+              <Button onClick={openAdd} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
+                <Plus className="h-4 w-4" /> Add Product
+              </Button>
             <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
                 <DialogTitle>{editingId ? 'Edit Product' : 'Add Product'}</DialogTitle>
@@ -341,6 +389,7 @@ const ManageProducts = () => {
               </div>
             </DialogContent>
           </Dialog>
+          </div>
         </div>
 
         <div className="bg-card border border-border rounded-lg overflow-hidden">
@@ -442,6 +491,55 @@ const ManageProducts = () => {
             )}
           </div>
         </div>
+
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 mt-8">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            
+            <div className="flex items-center gap-1">
+              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                let pageNum;
+                if (totalPages <= 5) {
+                  pageNum = i + 1;
+                } else if (currentPage <= 3) {
+                  pageNum = i + 1;
+                } else if (currentPage >= totalPages - 2) {
+                  pageNum = totalPages - 4 + i;
+                } else {
+                  pageNum = currentPage - 2 + i;
+                }
+                
+                return (
+                  <Button
+                    key={pageNum}
+                    variant={currentPage === pageNum ? 'default' : 'outline'}
+                    size="sm"
+                    className="w-9 h-9 p-0"
+                    onClick={() => setCurrentPage(pageNum)}
+                  >
+                    {pageNum}
+                  </Button>
+                );
+              })}
+            </div>
+
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
+        )}
       </div>
     </Layout>
   );

@@ -102,18 +102,23 @@ serve(async (req) => {
           Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
         )
 
-        // 1. Check if user already exists
-        const { data: existingUsers, error: listError } = await supabaseAdmin.auth.admin.listUsers()
-        const existingUser = existingUsers?.users.find(u => u.email === providedEmail)
+        // 1. Check if user already exists - OPTIMIZED: Use listUsers with filter or just direct creation attempt
+        // Note: admin.getUserByEmail is not available in all versions of the client, 
+        // using a more robust approach by attempting to create or finding via metadata
+        const { data: userData, error: findError } = await supabaseAdmin
+          .from('profiles')
+          .select('id')
+          .eq('email', providedEmail)
+          .maybeSingle()
 
-        if (!existingUser) {
+        if (!userData) {
           console.log(`[Auto-Registration] Creating new user for: ${providedEmail}`)
           // Create new user with a temporary password
           const { data: newUser, error: signUpError } = await supabaseAdmin.auth.admin.createUser({
             email: providedEmail,
-            email_confirm: true, // Auto-confirm email
+            email_confirm: true,
             user_metadata: { 
-              full_name: providedEmail.split('@')[0], // Use email part as name initially
+              full_name: providedEmail.split('@')[0],
               phone: phone || '' 
             }
           })
@@ -122,7 +127,6 @@ serve(async (req) => {
             user_id = newUser.user.id
             email = providedEmail
             
-            // Create profile entry manually (if trigger doesn't exist)
             await supabaseAdmin.from('profiles').upsert({
               id: user_id,
               email: providedEmail,
@@ -130,12 +134,19 @@ serve(async (req) => {
               address: address || '',
               full_name: providedEmail.split('@')[0]
             })
+          } else if (signUpError && signUpError.message.includes('already exists')) {
+            // Fallback if profile didn't exist but auth user did
+            const { data: allUsers } = await supabaseAdmin.auth.admin.listUsers()
+            const existingAuthUser = allUsers?.users.find(u => u.email === providedEmail)
+            if (existingAuthUser) {
+              user_id = existingAuthUser.id
+              email = providedEmail
+            }
           }
         } else {
-          user_id = existingUser.id
+          user_id = userData.id
           email = providedEmail
           
-          // Update profile with latest phone/address
           await supabaseAdmin.from('profiles').update({
             phone: phone || '',
             address: address || ''
@@ -178,7 +189,19 @@ serve(async (req) => {
       headers: { ...cors, 'Content-Type': 'application/json' }, status: 200
     })
   } catch (e) {
-    return new Response(JSON.stringify({ error: e.message || String(e) }), {
+    // Sanitize error message to prevent leaking sensitive information
+    let message = e.message || String(e);
+    
+    // Aggressively remove any Stripe-like keys from the error message
+    message = message.replace(/(sk_live_[a-zA-Z0-9]{20,})|(sk_test_[a-zA-Z0-9]{20,})/g, '[REDACTED]');
+    
+    if (message.includes('API key') || message.includes('sk_live_') || message.includes('sk_test_') || message.includes('REDACTED')) {
+      message = 'Invalid Stripe API configuration. Please update your Stripe Secret Key in the Admin Panel -> Stripe Control Center.';
+    }
+    
+    console.error(`[Payment Error] ${e.message}`);
+    
+    return new Response(JSON.stringify({ error: message }), {
       headers: { ...cors, 'Content-Type': 'application/json' }, status: 400
     })
   }

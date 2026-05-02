@@ -7,10 +7,24 @@ import { FUEL_TYPES } from '@/lib/constants';
 import { useCategories, useBrands } from '@/hooks/useProducts';
 import type { ProductFilters as FiltersType } from '@/lib/types';
 import { Filter, X, Loader2 } from 'lucide-react';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetDescription } from '@/components/ui/sheet';
 
 import { useTranslation } from 'react-i18next';
 import { translateDynamic } from '@/lib/translate';
+
+const VEHICLE_MODELS: Record<string, string[]> = {
+  Audi: ['A3', 'A4', 'A6', 'Q5', 'Q7'],
+  BMW: ['1 Series', '3 Series', '5 Series', 'X3', 'X5'],
+  Ford: ['Fiesta', 'Focus', 'Mondeo', 'Transit', 'Ranger'],
+  Mercedes: ['A-Class', 'C-Class', 'E-Class', 'Sprinter', 'Vito'],
+  Nissan: ['Juke', 'Navara', 'Primastar', 'Qashqai', 'X-Trail'],
+  Peugeot: ['208', '308', '3008', 'Partner', 'Boxer'],
+  Renault: ['Clio', 'Megane', 'Trafic', 'Kangoo', 'Master'],
+  Toyota: ['Avensis', 'Corolla', 'Hilux', 'Land Cruiser', 'Yaris'],
+  Volkswagen: ['Golf', 'Passat', 'Tiguan', 'Touran', 'Transporter'],
+};
+
+const CONDITION_OPTIONS = ['Used', 'Used - Good Condition', 'Rebuilt', 'Tested & Inspected'];
 
 interface ProductFiltersProps {
   filters: FiltersType;
@@ -21,6 +35,7 @@ interface ProductFiltersProps {
 const ProductFilters = ({ filters, onFiltersChange, isMobile }: ProductFiltersProps) => {
   const { t } = useTranslation();
   const [priceRange, setPriceRange] = useState([filters.price_min || 0, filters.price_max || 5000]);
+  const [mileageRange, setMileageRange] = useState([filters.mileage_min || 0, filters.mileage_max || 250000]);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { data: categories, isLoading: categoriesLoading } = useCategories();
   const { data: brands, isLoading: brandsLoading } = useBrands();
@@ -65,6 +80,15 @@ const ProductFilters = ({ filters, onFiltersChange, isMobile }: ProductFiltersPr
   }, [categories]);
 
   const [isApplying, setIsApplying] = useState(false);
+  const selectedMake = filters.brand?.length === 1 ? filters.brand[0] : '';
+  const yearOptions = useMemo(() => {
+    const currentYear = new Date().getFullYear();
+    return Array.from({ length: 31 }, (_, index) => currentYear - index);
+  }, []);
+  const modelOptions = useMemo(() => {
+    if (!selectedMake) return [];
+    return VEHICLE_MODELS[selectedMake] || [];
+  }, [selectedMake]);
 
   const handleFilterChange = (newFilters: FiltersType) => {
     setIsApplying(true);
@@ -94,16 +118,33 @@ const ProductFilters = ({ filters, onFiltersChange, isMobile }: ProductFiltersPr
     handleFilterChange({ ...filters, price_min: values[0], price_max: values[1], page: 1 });
   };
 
+  const handleMileageChange = (values: number[]) => {
+    setMileageRange(values);
+    handleFilterChange({ ...filters, mileage_min: values[0], mileage_max: values[1], page: 1 });
+  };
+
   const handleEngineCode = (code: string) => {
     handleFilterChange({ ...filters, engine_code: code || undefined, page: 1 });
   };
 
   const clearAll = () => {
     setPriceRange([0, 5000]);
-    handleFilterChange({ sort: filters.sort, page: 1 });
+    setMileageRange([0, 250000]);
+    handleFilterChange({ category_id: filters.category_id, sort: filters.sort, page: 1 });
   };
 
-  const hasFilters = filters.brand?.length || filters.fuel_type?.length || filters.engine_code || filters.price_min || filters.price_max || filters.category_id;
+  const hasFilters =
+    filters.brand?.length ||
+    filters.fuel_type?.length ||
+    filters.engine_code ||
+    filters.model ||
+    filters.year ||
+    filters.price_min ||
+    filters.price_max ||
+    filters.mileage_min ||
+    filters.mileage_max ||
+    filters.condition ||
+    filters.category_id;
 
   const filterContent = (
     <div className="space-y-6">
@@ -112,6 +153,49 @@ const ProductFilters = ({ filters, onFiltersChange, isMobile }: ProductFiltersPr
         {hasFilters && (
           <button onClick={clearAll} className="text-xs text-primary hover:underline">{t('cart.remove')}</button>
         )}
+      </div>
+
+      {/* Make / Model / Year */}
+      <div className="rounded-2xl border border-[#e3d6bc] bg-[#faf7ef] p-4 space-y-3">
+        <h4 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">Make / Model / Year</h4>
+        <select
+          value={selectedMake}
+          onChange={e => handleFilterChange({ ...filters, brand: e.target.value ? [e.target.value] : undefined, page: 1 })}
+          className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+        >
+          <option value="">Select Make</option>
+          {filteredBrands?.map(brand => (
+            <option key={brand.id} value={brand.name}>
+              {translateDynamic(brand.name)}
+            </option>
+          ))}
+        </select>
+        <div className="grid grid-cols-1 gap-3">
+          <Input
+            placeholder="Model"
+            value={filters.model || ''}
+            list="enginemarkets-models"
+            onChange={e => handleFilterChange({ ...filters, model: e.target.value || undefined, page: 1 })}
+            className="bg-background"
+          />
+          <datalist id="enginemarkets-models">
+            {modelOptions.map(model => (
+              <option key={model} value={model} />
+            ))}
+          </datalist>
+          <select
+            value={filters.year?.toString() || ''}
+            onChange={e => handleFilterChange({ ...filters, year: e.target.value ? Number(e.target.value) : undefined, page: 1 })}
+            className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+          >
+            <option value="">Select Year</option>
+            {yearOptions.map(year => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {/* Fuel Type */}
@@ -143,6 +227,38 @@ const ProductFilters = ({ filters, onFiltersChange, isMobile }: ProductFiltersPr
           onValueChange={handlePriceChange}
           className="mt-2"
         />
+      </div>
+
+      {/* Mileage Range */}
+      <div>
+        <h4 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground mb-3">
+          Mileage Range: {mileageRange[0].toLocaleString()} - {mileageRange[1].toLocaleString()} km
+        </h4>
+        <Slider
+          min={0}
+          max={250000}
+          step={5000}
+          value={mileageRange}
+          onValueChange={handleMileageChange}
+          className="mt-2"
+        />
+      </div>
+
+      {/* Condition */}
+      <div>
+        <h4 className="font-semibold text-xs uppercase tracking-wider text-muted-foreground mb-3">Condition</h4>
+        <select
+          value={filters.condition || ''}
+          onChange={e => handleFilterChange({ ...filters, condition: e.target.value || undefined, page: 1 })}
+          className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+        >
+          <option value="">All Conditions</option>
+          {CONDITION_OPTIONS.map(condition => (
+            <option key={condition} value={condition}>
+              {condition}
+            </option>
+          ))}
+        </select>
       </div>
 
       {/* Brand */}
@@ -212,6 +328,9 @@ const ProductFilters = ({ filters, onFiltersChange, isMobile }: ProductFiltersPr
             <SheetTitle className="text-left font-black uppercase tracking-tighter text-xl">
               {t('products.characteristics')}
             </SheetTitle>
+            <SheetDescription className="sr-only">
+              Filter products by category, brand, price and more.
+            </SheetDescription>
           </SheetHeader>
           {filterContent}
           <div className="mt-8">

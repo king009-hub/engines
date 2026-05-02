@@ -8,16 +8,32 @@ const HOMEPAGE_CACHE_KEY = 'enginemarkets_homepage_products';
 const CATEGORIES_CACHE_KEY = 'enginemarkets_categories';
 const BRANDS_CACHE_KEY = 'enginemarkets_brands';
 
+const normalizeProduct = (product: Partial<Product>) => ({
+  ...product,
+  compatibility: product.compatibility || [],
+  images: product.images || [],
+}) as Product;
+
 export function useProducts(filters: ProductFilters = {}) {
   const queryClient = useQueryClient();
-  const isHomepage = !filters.brand?.length && !filters.fuel_type?.length && !filters.engine_code && !filters.category_id && !filters.search && (filters.per_page === 16 || filters.per_page === 12);
+  const isHomepage =
+    !filters.brand?.length &&
+    !filters.fuel_type?.length &&
+    !filters.engine_code &&
+    !filters.model &&
+    !filters.year &&
+    !filters.condition &&
+    filters.mileage_min === undefined &&
+    filters.mileage_max === undefined &&
+    !filters.category_id &&
+    !filters.search &&
+    (filters.per_page === 16 || filters.per_page === 12);
 
   return useQuery({
     queryKey: ['products', filters],
     queryFn: async () => {
-      console.log('[useProducts] Fetching with filters:', JSON.stringify(filters));
       try {
-        const selectFields = 'id, name, brand, fuel_type, engine_code, price, mileage, year, images, category_id, availability, slug';
+        const selectFields = 'id, name, brand, fuel_type, engine_code, price, mileage, year, images, category_id, availability, slug, compatibility, condition';
         
         // Use estimated count for better performance on large tables
         const useCount = !isHomepage;
@@ -32,22 +48,44 @@ export function useProducts(filters: ProductFilters = {}) {
         if (filters.engine_code) {
           query = query.ilike('engine_code', `%${filters.engine_code}%`);
         }
+        if (filters.model) {
+          query = query.or(`name.ilike.%${filters.model}%,compatibility.cs.{${filters.model}}`);
+        }
+        if (filters.year !== undefined) {
+          query = query.eq('year', filters.year);
+        }
         if (filters.price_min !== undefined) {
           query = query.gte('price', filters.price_min);
         }
         if (filters.price_max !== undefined) {
           query = query.lte('price', filters.price_max);
         }
+        if (filters.mileage_min !== undefined) {
+          query = query.gte('mileage', filters.mileage_min);
+        }
+        if (filters.mileage_max !== undefined) {
+          query = query.lte('mileage', filters.mileage_max);
+        }
+        if (filters.condition) {
+          query = query.ilike('condition', `%${filters.condition}%`);
+        }
         if (filters.availability !== undefined) {
           query = query.eq('availability', filters.availability);
         }
         
         if (filters.category_id) {
-          // Check if this category has subcategories
+          // Check if this category has subcategories - optimized to use memory first
           let categories = queryClient.getQueryData<Category[]>(['categories']);
           
           if (!categories) {
-            const { data } = await supabase.from('categories').select('id, parent_id');
+            try {
+              const cached = localStorage.getItem(CATEGORIES_CACHE_KEY);
+              if (cached) categories = JSON.parse(cached);
+            } catch (e) {}
+          }
+          
+          if (!categories) {
+            const { data } = await withTimeout(supabase.from('categories').select('id, parent_id'), 5000);
             categories = data as Category[];
           }
 
@@ -79,6 +117,10 @@ export function useProducts(filters: ProductFilters = {}) {
         switch (filters.sort) {
           case 'price_asc': query = query.order('price', { ascending: true }); break;
           case 'price_desc': query = query.order('price', { ascending: false }); break;
+          case 'oldest': query = query.order('created_at', { ascending: true }); break;
+          case 'popularity':
+            query = query.order('availability', { ascending: false }).order('created_at', { ascending: false });
+            break;
           case 'name': query = query.order('name', { ascending: true }); break;
           default: query = query.order('created_at', { ascending: false });
         }
@@ -90,15 +132,14 @@ export function useProducts(filters: ProductFilters = {}) {
         query = query.range(from, to);
 
         const startTime = Date.now();
-        const { data, error, count } = await withTimeout(query, 10000);
+        const { data, error, count } = await withTimeout(query, 30000); // Increased to 30s
         const duration = Date.now() - startTime;
 
         if (error) {
-          console.error('[useProducts] Supabase error:', error.message);
           throw error;
         }
         
-        const products = (data as Product[]) || [];
+        const products = ((data as Product[]) || []).map(normalizeProduct);
         const result = { products, total: count || products.length };
 
         // Cache homepage products to localStorage for instant hydration next time
@@ -106,14 +147,11 @@ export function useProducts(filters: ProductFilters = {}) {
           try {
             localStorage.setItem(HOMEPAGE_CACHE_KEY, JSON.stringify(result));
           } catch (e) {
-            console.warn('[useProducts] Failed to cache homepage products:', e);
           }
         }
 
-        console.log(`[useProducts] Success: ${products.length} products found in ${duration}ms`);
         return result;
       } catch (err: any) {
-        console.error('[useProducts] Unexpected error:', err.message || err);
         throw err;
       }
     },
@@ -144,25 +182,22 @@ export function useProduct(idOrSlug: string) {
   return useQuery({
     queryKey: ['product', idOrSlug],
     queryFn: async () => {
-      console.log('[useProduct] Fetching product by id or slug:', idOrSlug);
       try {
         const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(idOrSlug);
         
-        let query = supabase.from('products').select('id, name, brand, fuel_type, engine_code, price, mileage, year, images, category_id, availability, slug, description, condition, compatibility');
+        let query = supabase.from('products').select('id, name, brand, fuel_type, engine_code, price, mileage, year, images, category_id, availability, slug, description, condition, compatibility, youtube_url');
         if (isUuid) {
           query = query.eq('id', idOrSlug);
         } else {
           query = query.eq('slug', idOrSlug);
         }
 
-        const { data, error } = await withTimeout(query.limit(1).maybeSingle(), 10000);
+        const { data, error } = await withTimeout(query.limit(1).maybeSingle(), 20000);
         if (error) {
-          console.error('[useProduct] Supabase error:', error.message, error.code);
           throw error;
         }
-        return data as Product | null;
+        return data ? normalizeProduct(data as Product) : null;
       } catch (err: any) {
-        console.error('[useProduct] Unexpected error:', err.message || err);
         throw err;
       }
     },
@@ -178,23 +213,20 @@ export function useCartProducts(ids: string[]) {
     queryKey: ['products-cart', ids],
     queryFn: async () => {
       if (!ids.length) return [];
-      console.log('[useCartProducts] Fetching products by IDs:', ids);
       try {
         const { data, error } = await withTimeout(
           supabase
             .from('products')
-            .select('id, name, brand, fuel_type, engine_code, price, mileage, year, images, category_id, availability, slug')
+            .select('id, name, price, images, slug') // Only select essential fields for cart
             .in('id', ids),
-          10000
+          45000 // Increased to 45s for critical checkout path
         );
 
         if (error) {
-          console.error('[useCartProducts] Supabase error:', error.message);
           throw error;
         }
-        return (data as Product[]) || [];
+        return ((data as Product[]) || []).map(normalizeProduct);
       } catch (err: any) {
-        console.error('[useCartProducts] Unexpected error:', err.message || err);
         throw err;
       }
     },
@@ -207,13 +239,12 @@ export function useCategories() {
   return useQuery({
     queryKey: ['categories'],
     queryFn: async () => {
-      console.log('[useCategories] Fetching...');
       try {
         const startTime = Date.now();
         
         const [catResult, assocResult] = await Promise.all([
-          withTimeout(supabase.from('categories').select('id, name, slug, parent_id, sort_order').order('sort_order'), 10000),
-          withTimeout(supabase.from('category_brands').select('category_id, brand_id'), 10000)
+          withTimeout(supabase.from('categories').select('id, name, slug, parent_id, sort_order').order('sort_order'), 30000),
+          withTimeout(supabase.from('category_brands').select('category_id, brand_id'), 30000)
         ]);
         
         if (catResult.error) throw catResult.error;
@@ -222,7 +253,6 @@ export function useCategories() {
         const categories = catResult.data;
         const associations = assocResult.data;
 
-        const duration = Date.now() - startTime;
         const result = categories.map(cat => ({
           ...cat,
           brand_ids: associations
@@ -235,21 +265,22 @@ export function useCategories() {
           localStorage.setItem(CATEGORIES_CACHE_KEY, JSON.stringify(result));
         } catch (e) {}
 
-        console.log(`[useCategories] Success: ${categories?.length} items in ${duration}ms`);
         return result;
       } catch (err: any) {
-        console.error('[useCategories] Unexpected error:', err.message || err);
         throw err;
       }
     },
     enabled: true,
-    staleTime: 1000 * 60 * 60 * 24,
+    staleTime: Infinity, // Trust realtime sync to invalidate this
     gcTime: 1000 * 60 * 60 * 48,
     placeholderData: keepPreviousData,
     initialData: () => {
       try {
         const cached = localStorage.getItem(CATEGORIES_CACHE_KEY);
-        if (cached) return JSON.parse(cached);
+        if (cached) {
+          console.log('[useCategories] Hydrating from localStorage');
+          return JSON.parse(cached);
+        }
       } catch (e) {}
       return undefined;
     }
@@ -260,17 +291,14 @@ export function useBrands() {
   return useQuery({
     queryKey: ['brands'],
     queryFn: async () => {
-      console.log('[useBrands] Fetching...');
       try {
-        const startTime = Date.now();
         const { data, error } = await withTimeout(
           supabase.from('brands').select('id, name, image_url').order('name'),
-          10000
+          30000
         );
 
         if (error) throw error;
 
-        const duration = Date.now() - startTime;
         const brands = data as Brand[];
 
         // Cache to localStorage
@@ -278,21 +306,22 @@ export function useBrands() {
           localStorage.setItem(BRANDS_CACHE_KEY, JSON.stringify(brands));
         } catch (e) {}
 
-        console.log(`[useBrands] Success: ${brands.length} brands in ${duration}ms`);
         return brands;
       } catch (err: any) {
-        console.error('[useBrands] Unexpected error:', err.message || err);
         throw err;
       }
     },
     enabled: true,
-    staleTime: 1000 * 60 * 60 * 24,
+    staleTime: Infinity, // Trust realtime sync to invalidate this
     gcTime: 1000 * 60 * 60 * 48,
     placeholderData: keepPreviousData,
     initialData: () => {
       try {
         const cached = localStorage.getItem(BRANDS_CACHE_KEY);
-        if (cached) return JSON.parse(cached);
+        if (cached) {
+          console.log('[useBrands] Hydrating from localStorage');
+          return JSON.parse(cached);
+        }
       } catch (e) {}
       return undefined;
     }
@@ -303,7 +332,6 @@ export function useCategoryBrands(categoryId?: string) {
   return useQuery({
     queryKey: ['category-brands', categoryId],
     queryFn: async () => {
-      console.log('Fetching category brands for:', categoryId);
       if (!categoryId) return [];
       try {
         const { data, error } = await supabase
@@ -311,13 +339,10 @@ export function useCategoryBrands(categoryId?: string) {
           .select('brand_id')
           .eq('category_id', categoryId);
         if (error) {
-          console.error('Supabase error fetching category brands:', error);
           throw error;
         }
-        console.log('Successfully fetched category brands:', data?.length);
         return data.map(item => item.brand_id);
       } catch (err) {
-        console.error('Unexpected error in useCategoryBrands:', err);
         throw err;
       }
     },
@@ -331,7 +356,6 @@ export function useRelatedProducts(product: Product | undefined) {
   return useQuery({
     queryKey: ['related-products', product?.id],
     queryFn: async () => {
-      console.log('Fetching related products for:', product?.id);
       if (!product) return [];
       try {
         // Optimized: Select only needed fields and use limit
@@ -349,12 +373,10 @@ export function useRelatedProducts(product: Product | undefined) {
 
         const { data, error } = await query;
         if (error) {
-          console.error('Supabase error fetching related products:', error);
           throw error;
         }
-        return data as Product[];
+        return ((data as Product[]) || []).map(normalizeProduct);
       } catch (err) {
-        console.error('Unexpected error in useRelatedProducts:', err);
         throw err;
       }
     },

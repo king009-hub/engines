@@ -93,12 +93,17 @@ export interface ProductFilters {
   brand?: string[];
   fuel_type?: string[];
   engine_code?: string;
+  model?: string;
+  year?: number;
   price_min?: number;
   price_max?: number;
+  mileage_min?: number;
+  mileage_max?: number;
+  condition?: string;
   availability?: boolean;
   category_id?: string;
   search?: string;
-  sort?: 'newest' | 'price_asc' | 'price_desc' | 'name';
+  sort?: 'newest' | 'price_asc' | 'price_desc' | 'name' | 'popularity' | 'oldest';
   page?: number;
   per_page?: number;
 }

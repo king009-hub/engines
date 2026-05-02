@@ -132,7 +132,7 @@ const StripeAnalytics = () => {
                     <TableCell className="text-xs font-mono text-muted-foreground">{payment.ip_address || 'N/A'}</TableCell>
                     <TableCell className="text-right">
                       {payment.status === 'paid' && (
-                        <Button variant="outline" size="xs" className="h-7 text-[10px] font-bold uppercase" onClick={() => handleRefund(payment.id, payment.stripe_payment_intent_id)}>
+                        <Button variant="outline" size="sm" className="h-7 text-[10px] font-bold uppercase" onClick={() => handleRefund(payment.id, payment.stripe_payment_intent_id)}>
                           Refund
                         </Button>
                       )}

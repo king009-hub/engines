@@ -94,6 +94,13 @@ serve(async (req) => {
 
     return new Response(JSON.stringify({ url: session.url }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 200 })
   } catch (error) {
-    return new Response(JSON.stringify({ error: error.message }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 })
+    // Sanitize error message
+    let message = error.message || String(error);
+    message = message.replace(/(sk_live_[a-zA-Z0-9]{20,})|(sk_test_[a-zA-Z0-9]{20,})/g, '[REDACTED]');
+    if (message.includes('API key') || message.includes('sk_live_') || message.includes('sk_test_') || message.includes('REDACTED')) {
+      message = 'Invalid Stripe API configuration. Please update your Stripe Secret Key in the Admin Panel.';
+    }
+
+    return new Response(JSON.stringify({ error: message }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 })
   }
 })

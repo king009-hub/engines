@@ -8,7 +8,7 @@ import { useProduct, useRelatedProducts } from '@/hooks/useProducts';
 import { useCart } from '@/hooks/useCart';
 import { useWishlist } from '@/hooks/useWishlist';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart, Heart, Home, FileText, Youtube } from 'lucide-react';
+import { ShoppingCart, Heart, Home, FileText, Youtube, BadgeCheck, Lock, MessageCircle, Truck } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useTranslation } from 'react-i18next';
 import { translateDynamic } from '@/lib/translate';
@@ -67,6 +67,29 @@ const ProductDetail = () => {
   };
 
   const translatedName = product ? translateDynamic(product.name) : t('products.loading');
+  const compatibilityRows = useMemo(() => {
+    if (!product) return [];
+
+    const rows = (product.compatibility || []).map((item, index) => ({
+      id: `${item}-${index}`,
+      make: translateDynamic(product.brand) || 'Ask Us',
+      model: translateDynamic(item) || 'Ask Us',
+      year: product.year?.toString() || 'Ask Us',
+    }));
+
+    if (rows.length > 0) {
+      return rows;
+    }
+
+    return [
+      {
+        id: 'default-row',
+        make: translateDynamic(product.brand) || 'Ask Us',
+        model: translatedName,
+        year: product.year?.toString() || 'Ask Us',
+      }
+    ];
+  }, [product, translatedName]);
   const metaDescription = product 
     ? `Buy ${translatedName} - ${product.engine_code ? `Engine Code: ${product.engine_code} - ` : ''}High quality auto parts at Engine Markets. Fast delivery.`
     : '';
@@ -154,26 +177,50 @@ const ProductDetail = () => {
               {/* Details */}
               <div className="space-y-6">
                 <div>
-                  <p className="text-xs font-bold uppercase text-primary tracking-wider">{translateDynamic(product.brand)} • {translateDynamic(product.fuel_type)}</p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="text-xs font-bold uppercase text-primary tracking-wider">{translateDynamic(product.brand)} • {translateDynamic(product.fuel_type)}</p>
+                    <div className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">
+                      <BadgeCheck className="h-3.5 w-3.5" />
+                      Used - Tested &amp; Inspected
+                    </div>
+                  </div>
                   <h1 className="text-2xl md:text-3xl font-black uppercase text-foreground mt-1">{translatedName}</h1>
                   <p className="text-muted-foreground mt-2">{translateDynamic(product.description)}</p>
                 </div>
 
-                <div className="text-3xl font-black text-primary">
-                  ${Math.round(Number(product.price))}
+                <div className="space-y-2">
+                  <div className="text-3xl font-black text-primary">
+                    ${Math.round(Number(product.price))}
+                  </div>
+                  <p className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
+                    <Lock className="h-4 w-4 text-[#b38a2e]" />
+                    Secure Checkout
+                  </p>
+                  <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+                    <Truck className="h-4 w-4 text-[#b38a2e]" />
+                    Usually ships within 48 hours
+                  </p>
                 </div>
 
-                {/* Compatibility */}
-                {product.compatibility?.length > 0 && (
-                  <div>
-                    <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-2">{t('products.compatibility')}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {product.compatibility.map(v => (
-                        <span key={v} className="bg-muted text-foreground text-xs px-3 py-1 rounded-full font-medium">{translateDynamic(v)}</span>
-                      ))}
-                    </div>
+                <div className="rounded-2xl border border-border overflow-hidden">
+                  <div className="bg-[#151515] px-4 py-3">
+                    <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white">Compatibility</h3>
                   </div>
-                )}
+                  <div className="divide-y divide-border">
+                    <div className="grid grid-cols-3 bg-muted/40 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
+                      <div className="px-4 py-3">Make</div>
+                      <div className="px-4 py-3">Model</div>
+                      <div className="px-4 py-3">Year</div>
+                    </div>
+                    {compatibilityRows.map(row => (
+                      <div key={row.id} className="grid grid-cols-3 text-sm">
+                        <div className="px-4 py-3 font-semibold text-foreground">{row.make}</div>
+                        <div className="px-4 py-3 text-foreground">{row.model}</div>
+                        <div className="px-4 py-3 text-muted-foreground">{row.year}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
                 {/* Actions */}
                 <div className="flex flex-col gap-3">
@@ -203,6 +250,15 @@ const ProductDetail = () => {
                       <span className="sm:hidden ml-2 font-bold uppercase text-xs">{isWishlisted(product.id) ? 'Saved to Wishlist' : 'Add to Wishlist'}</span>
                     </Button>
                   </div>
+                  <a
+                    href="https://wa.me/16122931250"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-[#1fb45a]"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    Not sure this fits your car? Ask us
+                  </a>
                 </div>
 
                 {/* Specs Table */}

@@ -1,15 +1,14 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, ShoppingCart, Menu, X, ChevronRight, Loader2, Globe } from 'lucide-react';
-import { Input } from '@/components/ui/input';
+import { Search, ShoppingCart, Menu, ChevronRight, Loader2 } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetDescription } from "@/components/ui/sheet";
 import { useCategories, useBrands } from '@/hooks/useProducts';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useTranslation } from 'react-i18next';
 import { translateDynamic } from '@/lib/translate';
 
-const MainHeader = () => {
+const MainHeader = memo(() => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,87 +26,99 @@ const MainHeader = () => {
   };
 
   return (
-    <div className="bg-[#f2f2f2] border-b border-[#dddddd]">
+    <div className="bg-[#f6f3eb] border-b border-[#ddd3bf]">
       <div className="container mx-auto px-4">
         {/* Desktop */}
-        <div className="hidden md:flex items-center justify-between gap-8 h-[110px]">
-          {/* Search */}
-          <form onSubmit={handleSearch} className="flex items-center shrink-0 w-[240px]">
-            <div className="relative w-full flex">
+        <div className="hidden md:flex items-center justify-between gap-6 py-2">
+          {/* Logo Section - Compact and combined */}
+          <div className="flex items-center gap-4 shrink-0">
+            <Link to="/" className="flex items-center gap-3 relative group">
+              <picture className="h-[50px] w-auto flex items-center">
+                <source srcSet="/images-optimized/logo.webp" type="image/webp" />
+                <img 
+                  src="/images-optimized/logo.png" 
+                  alt="Logo" 
+                  className="h-full w-auto object-contain"
+                />
+              </picture>
+              <div className="h-8 w-px bg-[#ddd3bf]" />
+              <picture className="h-[28px] w-auto flex items-center">
+                <source srcSet="/images-optimized/header.webp" type="image/webp" />
+                <img 
+                  src="/images-optimized/header.jpg" 
+                  alt="ENGINE MARKETS" 
+                  className="h-full w-auto object-contain"
+                />
+              </picture>
+              
+              {/* Floating Discount Badge */}
+              <div className="absolute -top-1 -right-4 bg-red-600 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full shadow-lg border border-white animate-bounce">
+                -30%
+              </div>
+            </Link>
+          </div>
+
+          {/* Search - More compact */}
+          <form onSubmit={handleSearch} className="flex-1 flex items-center justify-center max-w-xl">
+            <div className="relative w-full flex max-w-[400px]">
               <input
                 type="text"
                 placeholder={t('header.search_placeholder')}
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full border border-[#cccccc] bg-transparent h-[32px] px-3 text-[12px] italic focus:outline-none"
+                className="w-full border border-[#c9b48b] bg-white h-[38px] px-4 text-[13px] rounded-l-full focus:outline-none focus:ring-2 focus:ring-[#d4af37]/40 shadow-sm"
               />
               <button
                 type="submit"
-                className="h-[32px] w-[32px] flex items-center justify-center bg-[#2d5a00] hover:bg-[#244800] text-white shrink-0"
+                className="h-[38px] w-[46px] flex items-center justify-center bg-[#1f1f1f] hover:bg-[#111111] text-white shrink-0 rounded-r-full transition-colors"
               >
                 <Search className="h-3.5 w-3.5" />
               </button>
             </div>
           </form>
 
-          {/* Logo - Flex centered */}
-          <div className="flex-1 flex items-center justify-center min-w-0">
-            <Link to="/" className="flex items-center justify-center h-full w-full">
-              <img 
-                src="/header.jpg" 
-                alt="ENGINE MARKETS" 
-                className="h-full w-[300px] object-contain"
-              />
-            </Link>
-          </div>
-
-          {/* Right side */}
+          {/* Right side - Actions */}
           <div className="flex items-center gap-4 shrink-0">
-            {/* Logo Badge Image */}
-            <div className="flex items-center justify-center shrink-0">
-              <img 
-                src="/logo.png" 
-                alt="Logo" 
-                className="h-[85px] w-auto object-contain"
-              />
+            <div className="hidden lg:flex flex-col items-end -space-y-1 mr-2">
+              <span className="text-[10px] font-black text-red-600 uppercase tracking-tighter">Summer Sale</span>
+              <span className="text-[14px] font-black text-[#1b1b1b] uppercase tracking-tighter">30% OFF ALL</span>
             </div>
 
             <Link
               to="/contact"
-              className="inline-flex items-center px-7 py-2.5 bg-[#b38a2e] hover:bg-[#a07a29] text-white font-bold uppercase text-[14px] tracking-wide rounded-full shadow-sm"
+              className="inline-flex items-center px-5 py-2 bg-[#d4af37] hover:bg-[#c69f22] text-[#1b1b1b] font-bold uppercase text-[12px] tracking-wide rounded-full shadow-sm transition-colors"
             >
-              {t('header.estimate')}
+              Get a Quote
             </Link>
 
-            <div className="flex flex-col items-end justify-center gap-1 text-[#333333] relative shrink-0 pt-4">
-              <div className="flex items-center gap-2">
-                <span className="text-[11px] font-normal uppercase tracking-tight">{t('header.basket')}</span>
-                <Link to="/cart" className="relative">
-                  <div className="border-2 border-[#b38a2e] rounded-sm w-[36px] h-[36px] flex items-center justify-center bg-transparent">
-                    <span className="text-[#b38a2e] text-[18px] font-normal">
-                      {totalItems}
-                    </span>
-                  </div>
-                </Link>
-              </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#6a6a6a] hidden lg:block">{t('header.basket')}</span>
+              <Link to="/cart" className="relative">
+                <div className="border-2 border-[#d4af37] rounded-full w-[36px] h-[36px] flex items-center justify-center bg-white shadow-sm hover:scale-105 transition-transform">
+                  <span className="text-[#b38a2e] text-[14px] font-bold">
+                    {totalItems}
+                  </span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Mobile - visible on screens smaller than 1024px */}
-        <div className="lg:hidden flex items-center justify-between py-2">
+        {/* Mobile - visible on screens smaller than 768px */}
+        <div className="md:hidden flex items-center justify-between py-2 gap-2">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <button className="p-2 text-foreground hover:bg-muted rounded-md transition-colors" aria-label="Open menu">
-                <Menu className="h-6 w-6" />
+              <button className="p-1.5 text-foreground hover:bg-white rounded-md transition-colors border border-[#d8cfbc] bg-white/70" aria-label="Open menu">
+                <Menu className="h-5 w-5" />
               </button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[350px] p-0 flex flex-col bg-[#f2f2f2]">
+            <SheetContent side="left" className="w-[300px] sm:w-[350px] p-0 flex flex-col bg-[#f6f3eb]">
               <SheetHeader className="sr-only">
                 <SheetTitle>Mobile Menu</SheetTitle>
+                <SheetDescription>Navigation for mobile users</SheetDescription>
               </SheetHeader>
               <div className="flex-1 overflow-y-auto">
-                <div className="p-4 border-b border-gray-300 bg-white flex items-center justify-between sticky top-0 z-10 shadow-sm">
+                <div className="p-4 border-b border-[#ddd3bf] bg-white flex items-center justify-between sticky top-0 z-10 shadow-sm">
                   <form onSubmit={handleSearch} className="flex-1 flex items-center">
                     <div className="relative w-full flex">
                       <input
@@ -115,11 +126,11 @@ const MainHeader = () => {
                         placeholder={t('header.search_placeholder')}
                         value={searchQuery}
                         onChange={e => setSearchQuery(e.target.value)}
-                        className="w-full border border-[#cccccc] bg-white h-[38px] px-3 text-[14px] italic focus:outline-none focus:border-primary transition-colors"
+                        className="w-full border border-[#c9b48b] bg-white h-[38px] px-4 text-[14px] rounded-l-full focus:outline-none focus:border-primary transition-colors"
                       />
                       <button
                         type="submit"
-                        className="h-[38px] w-[38px] flex items-center justify-center bg-[#2d5a00] hover:bg-[#244800] text-white shrink-0 transition-colors"
+                        className="h-[38px] w-[38px] flex items-center justify-center bg-[#1f1f1f] hover:bg-[#111111] text-white shrink-0 transition-colors rounded-r-full"
                       >
                         <Search className="h-4 w-4" />
                       </button>
@@ -138,12 +149,11 @@ const MainHeader = () => {
                             <Link
                               to={`/products?category=${cat.slug}`}
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex-1 px-4 py-4 text-[13px] font-medium uppercase tracking-tight text-foreground"
+                              className="flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-tight text-foreground"
                             >
                               {translateDynamic(cat.name)}
                             </Link>
-                            <AccordionTrigger className="w-14 h-[52px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100 [&[data-state=open]>svg]:rotate-180">
-                              {/* Chevron is handled by the component, but we can style it */}
+                            <AccordionTrigger className="w-12 h-[48px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100 [&[data-state=open]>svg]:rotate-180">
                             </AccordionTrigger>
                           </div>
                           <AccordionContent className="p-0 bg-white">
@@ -196,11 +206,11 @@ const MainHeader = () => {
                                           <Link 
                                             to={`/products?category=engines&fuel_type=${col.fuel}`}
                                             onClick={() => setMobileMenuOpen(false)}
-                                            className="flex-1 px-8 py-3.5 text-[12px] font-black uppercase tracking-tighter text-foreground"
+                                            className="flex-1 px-8 py-3 text-[12px] font-black uppercase tracking-tighter text-foreground"
                                           >
                                             {col.title}
                                           </Link>
-                                          <AccordionTrigger className="w-12 h-[48px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100/50" />
+                                          <AccordionTrigger className="w-10 h-[44px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100/50" />
                                         </div>
                                         <AccordionContent className="p-0 bg-white">
                                           <div className="flex flex-col">
@@ -211,7 +221,7 @@ const MainHeader = () => {
                                                   key={itemIdx}
                                                   to={`/products?category=engines&fuel_type=${col.fuel}${brandsQuery}`}
                                                   onClick={() => setMobileMenuOpen(false)}
-                                                  className="px-12 py-3 text-[12px] text-[#444] border-b border-gray-50 last:border-0 hover:bg-gray-50 flex items-center justify-between uppercase tracking-tight"
+                                                  className="px-12 py-2.5 text-[12px] text-[#444] border-b border-gray-50 last:border-0 hover:bg-gray-50 flex items-center justify-between uppercase tracking-tight"
                                                 >
                                                   {item.name}
                                                   <ChevronRight className="h-3 w-3 opacity-20" />
@@ -290,11 +300,11 @@ const MainHeader = () => {
                                           <Link 
                                             to={`/products?category=${col.slug || 'engine-parts'}`}
                                             onClick={() => setMobileMenuOpen(false)}
-                                            className="flex-1 px-8 py-3.5 text-[12px] font-black uppercase tracking-tighter text-foreground"
+                                            className="flex-1 px-8 py-3 text-[12px] font-black uppercase tracking-tighter text-foreground"
                                           >
                                             {col.title}
                                           </Link>
-                                          <AccordionTrigger className="w-12 h-[48px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100/50" />
+                                          <AccordionTrigger className="w-10 h-[44px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100/50" />
                                         </div>
                                         <AccordionContent className="p-0 bg-white">
                                           <div className="flex flex-col">
@@ -306,7 +316,7 @@ const MainHeader = () => {
                                                   key={itemIdx}
                                                   to={`/products?category=${targetSlug}${brandsQuery}`}
                                                   onClick={() => setMobileMenuOpen(false)}
-                                                  className="px-12 py-3 text-[12px] text-[#444] border-b border-gray-50 last:border-0 hover:bg-gray-50 flex flex-col uppercase tracking-tight"
+                                                  className="px-12 py-2.5 text-[12px] text-[#444] border-b border-gray-50 last:border-0 hover:bg-gray-50 flex flex-col uppercase tracking-tight"
                                                 >
                                                   <span className="font-semibold">{item.name}</span>
                                                   {item.subTitle && (
@@ -366,11 +376,11 @@ const MainHeader = () => {
                                           <Link 
                                             to={`/products?category=gearboxes`}
                                             onClick={() => setMobileMenuOpen(false)}
-                                            className="flex-1 px-8 py-3.5 text-[12px] font-black uppercase tracking-tighter text-foreground"
+                                            className="flex-1 px-8 py-3 text-[12px] font-black uppercase tracking-tighter text-foreground"
                                           >
                                             {col.title}
                                           </Link>
-                                          <AccordionTrigger className="w-12 h-[48px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100/50" />
+                                          <AccordionTrigger className="w-10 h-[44px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100/50" />
                                         </div>
                                         <AccordionContent className="p-0 bg-white">
                                           <div className="flex flex-col">
@@ -381,7 +391,7 @@ const MainHeader = () => {
                                                   key={itemIdx}
                                                   to={`/products?category=gearboxes${brandsQuery}`}
                                                   onClick={() => setMobileMenuOpen(false)}
-                                                  className="px-12 py-3 text-[12px] text-[#444] border-b border-gray-50 last:border-0 hover:bg-gray-50 flex items-center justify-between uppercase tracking-tight"
+                                                  className="px-12 py-2.5 text-[12px] text-[#444] border-b border-gray-50 last:border-0 hover:bg-gray-50 flex items-center justify-between uppercase tracking-tight"
                                                 >
                                                   {item.name}
                                                   <ChevronRight className="h-3 w-3 opacity-20" />
@@ -401,11 +411,11 @@ const MainHeader = () => {
                                           <Link 
                                             to={`/products?category=${sub.slug}`}
                                             onClick={() => setMobileMenuOpen(false)}
-                                            className="flex-1 px-8 py-3.5 text-[12px] font-black uppercase tracking-tighter text-foreground"
+                                            className="flex-1 px-8 py-3 text-[12px] font-black uppercase tracking-tighter text-foreground"
                                           >
                                             {translateDynamic(sub.name)}
                                           </Link>
-                                          <AccordionTrigger className="w-12 h-[48px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100/50" />
+                                          <AccordionTrigger className="w-10 h-[44px] p-0 flex items-center justify-center hover:no-underline border-l border-gray-100/50" />
                                         </div>
                                         <AccordionContent className="p-0 bg-white">
                                           <div className="flex flex-col">
@@ -414,7 +424,7 @@ const MainHeader = () => {
                                                 key={brand.id}
                                                 to={`/products?category=${sub.slug}&brand=${brand.name}`}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className="px-12 py-3 text-[12px] text-[#444] border-b border-gray-50 last:border-0 hover:bg-gray-50 flex items-center justify-between uppercase tracking-tight"
+                                                className="px-12 py-2.5 text-[12px] text-[#444] border-b border-gray-50 last:border-0 hover:bg-gray-50 flex items-center justify-between uppercase tracking-tight"
                                               >
                                                 {translateDynamic(brand.name)}
                                                 <ChevronRight className="h-3 w-3 opacity-20" />
@@ -463,40 +473,58 @@ const MainHeader = () => {
 
                 <div className="p-4 space-y-6 mt-4">
                   <div className="flex items-center justify-center py-4 bg-white rounded-lg shadow-sm border border-gray-100">
-                    <img 
-                      src="/logo.png" 
-                      alt="Logo" 
-                      className="h-[60px] w-auto object-contain"
-                    />
+                    <picture className="h-[60px] w-auto flex items-center justify-center">
+                      <source srcSet="/images-optimized/logo.webp" type="image/webp" />
+                      <img 
+                        src="/images-optimized/logo.png" 
+                        alt="Logo" 
+                        className="h-full w-full object-contain"
+                      />
+                    </picture>
                   </div>
                   <Link
-                    to="/account"
+                    to="/contact"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-center w-full py-4 bg-[#b38a2e] text-white font-bold uppercase text-[13px] tracking-widest rounded-full shadow-md active:scale-[0.98] transition-all"
+                    className="flex items-center justify-center w-full py-4 bg-[#d4af37] text-[#1b1b1b] font-bold uppercase text-[13px] tracking-widest rounded-full shadow-md active:scale-[0.98] transition-all"
                   >
-                    {t('header.my_account')}
+                    Get a Quote
                   </Link>
                 </div>
               </div>
             </SheetContent>
           </Sheet>
-          <Link to="/" className="flex items-center justify-center flex-1 px-4 overflow-hidden">
-            <img 
-              src="/header.jpg" 
-              alt="ENGINE MARKETS" 
-              className="h-[45px] xs:h-[55px] sm:h-[70px] w-auto max-w-full object-contain"
-            />
+          <Link to="/" className="flex items-center justify-center flex-1 px-3 overflow-hidden">
+            <picture className="h-[35px] xs:h-[40px] sm:h-[45px] w-auto max-w-full flex items-center justify-center">
+              <source srcSet="/images-optimized/header.webp" type="image/webp" />
+              <img 
+                src="/images-optimized/header.jpg" 
+                alt="ENGINE MARKETS" 
+                className="h-full w-full object-contain"
+              />
+            </picture>
           </Link>
-          <Link to="/cart" className="relative p-2 hover:bg-muted rounded-full transition-colors">
-            <ShoppingCart className="h-6 w-6 text-primary" />
-            <span className="absolute top-0 right-0 border-2 border-white text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center bg-primary rounded-full shadow-sm">
+          <Link to="/cart" className="relative p-1.5 hover:bg-white rounded-full transition-colors border border-[#d8cfbc] bg-white/70">
+            <ShoppingCart className="h-5 w-5 text-primary" />
+            <span className="absolute top-0 right-0 border-2 border-white text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center bg-primary rounded-full shadow-sm">
               {totalItems}
             </span>
           </Link>
+          <div className="flex flex-col items-center -space-y-1">
+            <span className="text-[8px] font-black text-red-600 uppercase">30%</span>
+            <span className="text-[8px] font-black text-[#1b1b1b] uppercase">OFF</span>
+          </div>
+        </div>
+
+        <div className="pb-2 md:hidden">
+          <div className="rounded-full border border-[#d8cfbc] bg-[#1b1b1b] px-3 py-1.5 text-center text-[10px] font-semibold tracking-wide text-white shadow-sm">
+            Trusted Since 2009 | Worldwide Shipping | Tested Parts
+          </div>
         </div>
       </div>
     </div>
   );
-};
+});
+
+MainHeader.displayName = 'MainHeader';
 
 export default MainHeader;

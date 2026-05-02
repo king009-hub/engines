@@ -21,8 +21,13 @@ const Products = () => {
     brand: searchParams.get('brand') ? searchParams.get('brand')!.split(',') : undefined,
     fuel_type: searchParams.get('fuel_type') ? searchParams.get('fuel_type')!.split(',') : undefined,
     engine_code: searchParams.get('engine_code') || undefined,
+    model: searchParams.get('model') || undefined,
+    year: searchParams.get('year') ? Number(searchParams.get('year')) : undefined,
     price_min: searchParams.get('price_min') ? Number(searchParams.get('price_min')) : undefined,
     price_max: searchParams.get('price_max') ? Number(searchParams.get('price_max')) : undefined,
+    mileage_min: searchParams.get('mileage_min') ? Number(searchParams.get('mileage_min')) : undefined,
+    mileage_max: searchParams.get('mileage_max') ? Number(searchParams.get('mileage_max')) : undefined,
+    condition: searchParams.get('condition') || undefined,
     availability: searchParams.get('availability') === 'true' ? true : undefined,
     category_id: (() => {
       const catSlug = searchParams.get('category');
@@ -45,8 +50,13 @@ const Products = () => {
     if (newFilters.brand?.length) params.set('brand', newFilters.brand.join(','));
     if (newFilters.fuel_type?.length) params.set('fuel_type', newFilters.fuel_type.join(','));
     if (newFilters.engine_code) params.set('engine_code', newFilters.engine_code);
+    if (newFilters.model) params.set('model', newFilters.model);
+    if (newFilters.year) params.set('year', String(newFilters.year));
     if (newFilters.price_min) params.set('price_min', String(newFilters.price_min));
     if (newFilters.price_max) params.set('price_max', String(newFilters.price_max));
+    if (newFilters.mileage_min) params.set('mileage_min', String(newFilters.mileage_min));
+    if (newFilters.mileage_max) params.set('mileage_max', String(newFilters.mileage_max));
+    if (newFilters.condition) params.set('condition', newFilters.condition);
     if (newFilters.availability) params.set('availability', 'true');
     if (newFilters.search) params.set('search', newFilters.search);
     if (newFilters.sort && newFilters.sort !== 'newest') params.set('sort', newFilters.sort);
@@ -114,6 +124,12 @@ const Products = () => {
 
   return (
     <Layout title={categoryName} description={metaDescription}>
+      <div className="border-b border-[#dfd3b5] bg-[#f5ebd4]">
+        <div className="container mx-auto px-4 py-2 text-center text-xs sm:text-sm font-semibold text-[#1b1b1b]">
+          Every part is tested and inspected - 60 day warranty included
+        </div>
+      </div>
+
       {/* Breadcrumb */}
       <div className="bg-card border-b border-border">
         <div className="container mx-auto px-4 py-3">
@@ -134,6 +150,20 @@ const Products = () => {
 
           {/* Main content */}
           <div className="flex-1 min-w-0">
+            <div className="mb-4 rounded-2xl border border-[#ddd3bf] bg-[#faf7ef] px-4 py-3">
+              <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b38a2e]">
+                    Browse category
+                  </p>
+                  <h1 className="mt-1 text-2xl font-black uppercase text-foreground">{categoryName}</h1>
+                </div>
+                <div className="text-sm font-semibold text-emerald-700">
+                  All parts tested before shipping
+                </div>
+              </div>
+            </div>
+
             <div className="bg-card border border-border p-3 rounded-lg mb-6 flex flex-col lg:flex-row items-center justify-between gap-4">
               <div className="lg:hidden w-full sm:w-auto">
                 <ProductFilters filters={filters} onFiltersChange={updateFilters} isMobile />

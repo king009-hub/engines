@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import ProductCard from './ProductCard';
 import type { Product } from '@/lib/types';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -8,7 +9,7 @@ interface ProductGridProps {
   loading?: boolean;
 }
 
-const ProductGrid = ({ products, loading }: ProductGridProps) => {
+const ProductGrid = memo(({ products, loading }: ProductGridProps) => {
   const { t } = useTranslation();
   if (loading) {
     return (
@@ -40,6 +41,8 @@ const ProductGrid = ({ products, loading }: ProductGridProps) => {
       ))}
     </div>
   );
-};
+});
+
+ProductGrid.displayName = 'ProductGrid';
 
 export default ProductGrid;

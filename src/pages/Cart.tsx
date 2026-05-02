@@ -37,14 +37,22 @@ const Cart = () => {
     if (items.length === 0) return;
     
     // Safety check: ensure all items have matching product data before proceeding
-    const allProductsLoaded = items.every(item => getProduct(item.product_id));
-    if (!allProductsLoaded) {
-      console.warn('[Cart] Attempted checkout but not all product data is loaded yet.');
+    const missingProducts = items.filter(item => !getProduct(item.product_id));
+    
+    if (missingProducts.length > 0) {
+      console.warn('[Cart] Some product data is missing. Cleaning up cart.');
+      toast({
+        title: "Cart Update",
+        description: "Some items in your cart are no longer available and have been removed.",
+        variant: "destructive"
+      });
+      // Remove invalid items
+      missingProducts.forEach(p => removeItem(p.product_id));
       return;
     }
 
     navigate('/checkout');
-  }, [items, getProduct, navigate]);
+  }, [items, getProduct, navigate, removeItem, toast]);
 
   // Pre-fetch checkout page components when user is in cart
   useEffect(() => {

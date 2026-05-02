@@ -16,10 +16,15 @@ const ProductSort = ({ value, onChange, total, page, perPage }: ProductSortProps
 
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 flex-1">
-      <p className="text-sm text-muted-foreground order-2 sm:order-1 whitespace-nowrap">
-        {t('products.showing')} <span className="font-semibold text-foreground">{from}–{to}</span> {t('products.of')}{' '}
-        <span className="font-semibold text-foreground">{total}</span> {t('products.results')}
-      </p>
+      <div className="order-2 sm:order-1 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+        <p className="text-sm text-muted-foreground whitespace-nowrap">
+          {t('products.showing')} <span className="font-semibold text-foreground">{from}-{to}</span> {t('products.of')}{' '}
+          <span className="font-semibold text-foreground">{total}</span> {t('products.results')}
+        </p>
+        <p className="text-sm font-semibold text-emerald-700 whitespace-nowrap">
+          All parts tested before shipping
+        </p>
+      </div>
       <div className="w-full sm:w-auto order-1 sm:order-2">
         <Select value={value} onValueChange={onChange}>
           <SelectTrigger className="w-full sm:w-[220px] bg-background border-border h-9 text-xs font-bold uppercase tracking-widest">
@@ -27,10 +32,10 @@ const ProductSort = ({ value, onChange, total, page, perPage }: ProductSortProps
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="newest" className="text-xs uppercase font-medium">{t('products.sort_newest')}</SelectItem>
-            <SelectItem value="oldest" className="text-xs uppercase font-medium">{t('products.sort_oldest')}</SelectItem>
             <SelectItem value="price_asc" className="text-xs uppercase font-medium">{t('products.sort_price_asc')}</SelectItem>
             <SelectItem value="price_desc" className="text-xs uppercase font-medium">{t('products.sort_price_desc')}</SelectItem>
-            <SelectItem value="popularity" className="text-xs uppercase font-medium">{t('products.sort_popularity')}</SelectItem>
+            <SelectItem value="popularity" className="text-xs uppercase font-medium">Most Popular</SelectItem>
+            <SelectItem value="oldest" className="text-xs uppercase font-medium">{t('products.sort_oldest')}</SelectItem>
           </SelectContent>
         </Select>
       </div>

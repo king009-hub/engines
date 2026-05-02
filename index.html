@@ -2,6 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Optimization: Block problematic third-party trackers that cause CORS errors and slow down loading
+      (function() {
+        const blockedHosts = ['api2.branch.io', 'api.branch.io'];
+        const originalFetch = window.fetch;
+        window.fetch = function(url, options) {
+          if (typeof url === 'string' && blockedHosts.some(host => url.includes(host))) {
+            return Promise.reject(new Error('Blocked by optimization'));
+          }
+          return originalFetch.apply(this, arguments);
+        };
+        const originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url) {
+          if (typeof url === 'string' && blockedHosts.some(host => url.includes(host))) {
+            this.abort();
+            return;
+          }
+          return originalOpen.apply(this, arguments);
+        };
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Engine Markets | Used Engines, Gearboxes & Auto Parts</title>
     <meta name="description" content="Find high-quality used engines, gearboxes, and auto parts at Engine Markets. We offer a wide range of tested and verified automotive parts with fast delivery across Europe.">
@@ -26,14 +47,14 @@
     <link rel="canonical" href="https://enginemarkets.com/" />
     
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- Preload Critical Images -->
-    <link rel="preload" as="image" href="/header.jpg">
-    <link rel="preload" as="image" href="/logo.png">
 
-    <!-- Pre-load Stripe for faster checkout -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Pre-connect to Stripe for faster checkout when needed -->
     <link rel="preconnect" href="https://js.stripe.com">
-    <script src="https://js.stripe.com/v3/" async></script>
 </head>
 
   <body>

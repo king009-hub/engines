@@ -23,11 +23,11 @@ i18n
             view_all: "View All {{name}}",
           },
           footer: {
-            society: "The Society",
+            society: "About Us",
             who_we_are: "Who we are",
             payment_methods: "Payment methods",
             contact: "Contact",
-            access_customers: "Access Customers",
+            access_customers: "My Account",
             my_account: "My account",
             quotes: "Quotes",
             information: "Information",
